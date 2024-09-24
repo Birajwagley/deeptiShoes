@@ -1,0 +1,205 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* since nested groupes are not supported we have to use 
+     regular css for the nested dropdowns 
+  */
+li > ul {
+  transform: translatex(100%) scale(0);
+}
+li:hover > ul {
+  transform: translatex(101%) scale(1);
+}
+li > button svg {
+  transform: rotate(-90deg);
+}
+li:hover > button svg {
+  transform: rotate(-270deg);
+}
+
+/* Below styles fake what can be achieved with the tailwind config
+     you need to add the group-hover variant to scale and define your custom
+     min width style.
+  	 See https://codesandbox.io/s/tailwindcss-multilevel-dropdown-y91j7?file=/index.html
+  	 for implementation with config file
+  */
+.group:hover .group-hover\:scale-100 {
+  transform: scale(1);
+}
+.group:hover .group-hover\:-rotate-180 {
+  transform: rotate(180deg);
+}
+.scale-0 {
+  transform: scale(0);
+}
+.min-w-32 {
+  min-width: 8rem;
+}
+
+#about {
+  background-image: url(./img/vector2.jpg);
+}
+
+#footer {
+  background-image: url(https://demo.casethemes.net/alico/wp-content/uploads/2022/10/h7-bg-footer.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+li > ul {
+  transform: translatex(100%) scale(0);
+}
+
+li:hover > ul {
+  transform: translatex(101%) scale(1);
+}
+
+li > button svg {
+  transform: rotate(-90deg);
+}
+
+li:hover > button svg {
+  transform: rotate(-270deg);
+}
+/* 
+#about {
+  background-image: url(./img/natalya-zaritskaya-SIOdjcYotms-unsplash.jpg);
+  background-color: linear-gradient(
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0)
+  );
+} */
+
+#about2 {
+  background-image: url(./img/banner.jpg);
+  background-position: center;
+  background-size: contain;
+}
+
+.gradient-bg {
+  background-color: #70b2d9;
+  background-image: linear-gradient(315deg, #70b2d9 0%, #39e5b6 74%);
+}
+
+.insurance-gradient {
+  background-image: -webkit-linear-gradient(90deg, #f0f3f7 0%, white 100%);
+}
+
+.opportunity {
+  background-image: -webkit-linear-gradient(180deg, #0ce0ff 0%, #015fc9 100%);
+}
+
+#mySidenav a {
+  position: fixed;
+  left: -80px;
+  transition: 0.3s;
+  padding: 15px;
+  width: 115px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #ffffff;
+  border-radius: 0 5px 5px 0;
+  border-right: 2px solid #ffffff;
+  z-index: 1;
+  font-family: 'Creepster', cursive;
+}
+
+#mySidenav a:hover {
+  left: 0;
+}
+
+#mySidenav i {
+  position: absolute;
+  right: 10px;
+  letter-spacing: -3px;
+  font-size: 20px;
+}
+
+#mySidenav a:nth-child(1) {
+  top: 150px;
+  background-color: #138f82;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #ffffff;
+}
+
+#mySidenav a:nth-child(2) {
+  top: 212px;
+  padding: 8px;
+  background-color: #138f82;
+}
+
+#mySidenav a:nth-child(3) {
+  top: 260px;
+  padding: 8px;
+
+  background-color: #138f82;
+}
+
+#mySidenav a:nth-child(4) {
+  top: 308px;
+  padding: 8px;
+
+  background-color: #138f82;
+}
+
+.hamburger {
+  display: block;
+  margin-right: 30px;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  transition: all 0.25s;
+  margin-right: 25px;
+  position: relative;
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 2px;
+  background: #000;
+  transform: rotate(0);
+  transition: all 0.5s;
+}
+
+.hamburger-middle {
+  transform: translateY(7px);
+}
+
+.hamburger-bottom {
+  transform: translateY(14px);
+}
+.open {
+  transform: rotate(90deg);
+  transform: translateY(0px);
+}
+
+.open .hamburger-top {
+  transform: rotate(45deg) translateY(6px) translate(6px);
+}
+
+.open .hamburger-middle {
+  display: none;
+}
+
+.open .hamburger-bottom {
+  transform: rotate(-45deg) translateY(6px) translate(-6px);
+}

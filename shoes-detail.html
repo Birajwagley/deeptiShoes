@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+      integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="./css/main.css" />
+    <title>Cedar-Ran</title>
+    <style>
+      /* Add this CSS to your styles */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 50;
+        transition: top 0.3s linear;
+      }
+
+      @keyframes slideLeftToRight {
+        0% {
+          transform: translateX(10%);
+        }
+
+        100% {
+          transform: translateX(50%);
+        }
+      }
+
+      .animate-slide {
+        animation: slideLeftToRight 3s ease infinite;
+      }
+    </style>
+  </head>
+  <!-- #FEEA00 -->
+
+  <body class="">
+    <div
+      id="preloader"
+      class="flex-col gap-4 w-full h-screen flex items-center justify-center bg-white fixed inset-0 z-50"
+    >
+      <div
+        class="w-20 h-20 border-4 border-transparent text-blue-400 text-4xl animate-spin flex items-center justify-center border-t-blue-400 rounded-full"
+      >
+        <div
+          class="w-16 h-16 border-4 border-transparent text-red-400 text-2xl animate-spin flex items-center justify-center border-t-red-400 rounded-full"
+        ></div>
+      </div>
+    </div>
+    <button
+      id="goToTopBtn"
+      class="z-500000 fixed bottom-4 right-4 bg-[#EF5824] text-white p-2 rounded-full shadow-lg transform transition-transform duration-300 hover:scale-110 hover:bg-black-600 hidden"
+    >
+      <img
+        src="{{ asset('assets/img/top-arrow.png') }}"
+        alt="go-to-top-button"
+        class="w-10 h-10"
+      />
+    </button>
+
+    <!-- Desktop Header -->
+    <nav class="sticky w-full top-0 left-0 right-0 z-50">
+      <div
+        class="flex justify-between items-center p-4 bg-black shadow-xl lg:space-x-12"
+      >
+        <div class="flex items-center justify-between xl:space-x-12">
+          <img
+            src="./img/logorancedarresize.png"
+            class="pr-6 lg:pr-0"
+            height="50"
+            width="80"
+            alt=""
+          />
+
+          <div
+            class="hidden pl-12 lg:flex lg:space-x-6 lg:items-center lg:justify-center"
+          >
+            <a
+              href="#"
+              class="font-semibold border-b-2 border-sky-500 text-white focus:border-b-2 focus:border-cyan-500 focus:text-cyan-500"
+              >Home</a
+            >
+
+            <div class="group inline-block">
+              <button
+                aria-haspopup="true"
+                aria-controls="menu"
+                class="bg-black outline-none focus:outline-none pl-3 py-1 rounded-sm flex items-center min-w-24"
+              >
+                <span class="font-semibold flex-1 pr-2 text-white">About</span>
+                <span>
+                  <svg
+                    class="fill-current h-4 w-4 transform group-hover:-rotate-180 transition duration-150 ease-in-out"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                    />
+                  </svg>
+                </span>
+              </button>
+              <ul
+                id="menu"
+                aria-hidden="true"
+                class="flex flex-col z-50 space-y-6 bg-white border p-4 rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top min-w-24"
+              >
+                <li class="rounded-sm px-1 py-1 hover:bg-gray-100">
+                  <a href="ceoMessage.html">Message from CEO</a>
+                </li>
+                <li class="rounded-sm px-1 py-1 z-50 hover:bg-gray-100">
+                  <a href="hod.html">HOD</a>
+                </li>
+                <li class="rounded-sm px-1 py-1 hover:bg-gray-100">
+                  <a href="missionVision.html">Mission and Vision</a>
+                </li>
+                <li class="rounded-sm relative px-1 py-1 hover:bg-gray-100">
+                  <button
+                    aria-haspopup="true"
+                    aria-controls="menu-lang"
+                    class="w-full text-left flex items-center outline-none focus:outline-none"
+                  >
+                    <span class="pr-1 flex-1">Executive</span>
+                    <span class="mr-auto">
+                      <svg
+                        class="fill-current h-4 w-4 transition duration-150 ease-in-out"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                  <ul
+                    aria-hidden="true"
+                    class="flex flex-col space-y-6 bg-white p-8 border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-24"
+                  >
+                    <li class="px-1 py-1 hover:bg-gray-100">
+                      <a href="deputyCeo.html"> Deputy CEO</a>
+                    </li>
+                    <li class="rounded-sm relative px-1 py-1 hover:bg-gray-100">
+                      <button
+                        aria-haspopup="true"
+                        class="w-full text-left flex items-center outline-none focus:outline-none"
+                      >
+                        <span class="pr-1 flex-1"
+                          ><a href="management.html">Management</a>
+                        </span>
+                        <span class="mr-auto">
+                          <svg
+                            class="fill-current h-4 w-4 transition duration-150 ease-in-out"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                          >
+                            <path
+                              d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                            />
+                          </svg>
+                        </span>
+                      </button>
+                      <ul
+                        aria-hidden="true"
+                        class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-48"
+                      >
+                        <li class="px-6 py-3 hover:bg-gray-100">
+                          <a href=""></a> Corporate Management
+                        </li>
+                        <li class="px-6 py-3 hover:bg-gray-100">
+                          <a href=""></a> Local Management Committee
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li class="rounded-sm px-1 py-1 hover:bg-gray-100">
+                  Objectives
+                </li>
+                <li class="rounded-sm px-1 py-1 hover:bg-gray-100">Values</li>
+                <li class="rounded-sm px-1 py-1 hover:bg-gray-100">
+                  Key person
+                </li>
+                <li class="rounded-sm px-1 py-1 hover:bg-gray-100">
+                  Nepal Management Committee
+                </li>
+
+                <li class="rounded-sm px-1 py-1 hover:bg-gray-100">
+                  <a href="surveyors.html">Agents/Surveyor</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="group inline-block">
+              <button
+                aria-haspopup="true"
+                aria-controls="menu"
+                class="outline-none focus:outline-none px-1 py-1 bg-black rounded-sm flex items-center min-w-24"
+              >
+                <span class="pr-1 font-semibold flex-1 text-white"
+                  >Download</span
+                >
+                <span>
+                  <svg
+                    class="fill-current h-4 w-4 transform group-hover:-rotate-180 transition duration-150 ease-in-out"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                    />
+                  </svg>
+                </span>
+              </button>
+              <ul
+                aria-hidden="true"
+                class="flex flex-col space-y-6 bg-white border p-8 rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top min-w-24"
+              >
+                <li class="rounded-sm px-3 py-1 hover:bg-gray-100">
+                  Claim Estimation Form
+                </li>
+                <li class="rounded-sm px-3 py-1 hover:bg-gray-100">
+                  Financial Reports
+                </li>
+                <li class="rounded-sm px-3 py-1 hover:bg-gray-100">Kyc Form</li>
+                <li class="rounded-sm px-3 py-1 hover:bg-gray-100">
+                  Proposal Forms
+                </li>
+                <li class="rounded-sm px-3 py-1 hover:bg-gray-100">Tender</li>
+                <li class="rounded-sm px-3 py-1 hover:bg-gray-100">Other</li>
+              </ul>
+            </div>
+            <a href="#" class="font-semibold text-white">Contact</a>
+          </div>
+        </div>
+
+        <div class="flex space-x-4 items-center">
+          <img
+            src="./img/facebookwhite.png"
+            class="hidden w-6 h-6 lg:block"
+            alt=""
+          />
+          <img
+            src="./img/instagramwhite.png"
+            class="hidden w-6 h-6 lg:block"
+            alt=""
+          />
+          <img
+            src="./img/twitterwhite.png"
+            class="hidden w-6 h-6 lg:block"
+            alt=""
+          />
+          <img
+            src="./img/youtubewhite.png"
+            class="hidden w-6 h-6 lg:block"
+            alt=""
+          />
+
+          <div class="flex flex-col space-y-2 items-end">
+            <div class="flex space-x-8 items-center">
+              <div class="lg:hidden">
+                <button
+                  class="navbar-burger flex items-center text-blue-600 p-3"
+                >
+                  <svg
+                    class="block h-6 w-6 fill-current"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <title>Mobile menu</title>
+                    <path
+                      d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Quick Access -->
+    <nav id="mySidenav" class="sidenav hidden md:block">
+      <a href="#header" class="flex items-center"
+        ><span class="text-sm py-[5px]">Home</span>
+        <i class="pl-6 fas fa-house-damage" aria-hidden="true"></i
+      ></a>
+
+      <a href="#" class="flex items-center"
+        ><span class="text-sm py-[5px]">products</span>
+        <i class="fas fa-box" aria-hidden="true"></i
+      ></a>
+      <a href="#" class="flex items-center"
+        ><span class="text-sm -ml-2 pl-[3px] py-[5px]">Lodge Claim</span>
+        <i class="fas fa-search" aria-hidden="true"></i
+      ></a>
+      <a href="#" class="flex space-x-4 items-center"
+        ><span class="text-sm -ml-2 pl-[3px] py-[5px]">Newsletter</span>
+        <i class="fas fa-envelope" aria-hidden="true"></i
+      ></a>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <nav id="mySidenav" class="sidenav hidden md:block">
+      <a href="#header" class="flex items-center"
+        >Home <i class="pl-6 fas fa-house-damage" aria-hidden="true"></i
+      ></a>
+
+      <a href="#" class="flex items-center"
+        ><span class="text-sm py-[5px]">products</span>
+        <i class="fas fa-box" aria-hidden="true"></i
+      ></a>
+      <a href="#" class="flex items-center"
+        ><span class="text-sm -ml-2 pl-[3px] py-[5px]">Lodge Claim</span>
+        <i class="fas fa-search" aria-hidden="true"></i
+      ></a>
+      <a href="#" class="flex space-x-4 items-center"
+        ><span class="text-sm -ml-2 pl-[3px] py-[5px]">Newsletter</span>
+        <i class="fas fa-envelope" aria-hidden="true"></i
+      ></a>
+    </nav>
+
+    <div class="navbar-menu relative z-50 hidden">
+      <div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
+      <nav
+        class="fixed top-0 left-0 bottom-0 flex flex-col w-[90%] max-w-sm py-6 px-6 bg-white border-r overflow-y-auto"
+      >
+        <div class="flex items-center mb-8">
+          <a class="mr-auto text-3xl font-bold leading-none" href="#">
+            <img src="./img/logorancedarresize.png"
+            class="pr-6 lg:pr-0"
+            height="50"
+            width="80"
+            alt="" />
+          </a>
+          <button class="navbar-close">
+            <svg
+              class="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div>
+          <ul>
+            <li class="mb-1">
+              <a
+                class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
+                href="index.html"
+                >Home</a
+              >
+            </li>
+
+            <li class="group">
+              <button
+                class="outline-none focus:outline-none p-4 flex items-center text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
+              >
+                <span class="pr-1 font-semibold flex-1">About</span>
+                <span>
+                  <svg
+                    class="fill-current h-4 w-4 transform group-hover:-rotate-180 transition duration-150 ease-in-out"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                    />
+                  </svg>
+                </span>
+              </button>
+              <ul
+                class="bg-white p-4 border rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top min-w-24"
+              >
+                <li class="rounded-sm px-3 py-4 hover:bg-gray-100">
+                  <a href="about.html">Company Profile</a>
+                </li>
+                <li class="rounded-sm px-3 py-4 hover:bg-gray-100">
+                  <a href="ceoMessage.html">Message From CEO</a>
+                </li>
+                
+                <li class="rounded-sm px-3 py-4 hover:bg-gray-100">
+                  <a href="missionVision.html">Mission and Vision</a>
+                </li>
+                <li class="rounded-sm px-3 py-4 hover:bg-gray-100">
+                  <a href="management.html">Management Commitee</a>
+                </li>
+              </ul>
+            </li>
+            <li class="mb-1">
+              <a
+                class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
+                href="blog.html"
+                >Blog</a
+              >
+            </li>
+            <li class="mb-1">
+              <a
+                class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
+                href="contactUs.html"
+                >Contact Us </a
+              >
+            </li>
+
+            <!-- <li class="group block">
+              <button
+                class="outline-none focus:outline-none p-4 flex items-center text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
+              >
+                <span class="pr-1 font-semibold flex-1">Download</span>
+              </button>
+              <ul
+                class="bg-white p-4 border rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top min-w-24"
+              >
+                <li class="rounded-sm px-3 py-4 hover:bg-gray-100">
+                  <a href="#">Claim Estimation Form</a>
+                </li>
+                <li class="rounded-sm px-3 py-4 hover:bg-gray-100">
+                  <a href="#">Financial Reports</a>
+                </li>
+                <li class="rounded-sm px-3 py-4 hover:bg-gray-100">
+                  <a href="#">Kyc Form</a>
+                </li>
+
+                <li class="rounded-sm px-3 py-4 hover:bg-gray-100">
+                  <a href="#">Proposal Forms</a>
+                </li>
+                <li class="rounded-sm px-3 py-4 hover:bg-gray-100">
+                  <a href="#">Tender</a>
+                </li>
+                <li class="rounded-sm px-3 py-4 hover:bg-gray-100">
+                  <a href="#">Other</a>
+                </li>
+              </ul>
+            </li> -->
+
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <section class="mb-10">
+      <div
+        class="relative overflow-hidden bg-no-repeat bg-cover"
+        style="
+          background-image: url('./img/blog.jpg');
+          background-position: center;
+          background-size: cover;
+          height: 50vh;
+        "
+      >
+        <div
+          class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"
+          style="background-color: rgba(0, 0, 0, 0.75)"
+        >
+          <div class="flex justify-center items-center h-full">
+            <div class="text-white px-6 md:px-12">
+              <div class="absolute bottom-4 left-6 p-4 px-8 rounded-xl">
+                <div class="flex flex-col space-y-6">
+                  <p class="text-white md:text-4xl font-bold">Cedar Trekking Shoes</p>
+                  <div class="flex items-center space-x-4">
+                    <p class="text-white md:text-xl font-semibold">Home</p>
+                    <div class="w-4 h-4 rounded-full bg-[#34DA89]"></div>
+                    <p class="text-white md:text-xl font-semibold">
+                      Cedar Trekking Shoes
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+        <!-- New Arrival -->
+        <section>
+          <div class="mt-10 p-4">
+            <div
+              class="flex flex-col space-y-6 md:mx-8 lg:m-0 lg:items-center lg:mx-20"
+            >
+              <h1
+                class="uppercase text-[#004d6e] text-xl text-center font-bold tracking-widest"
+              >
+                New Arrivals
+              </h1>
+    
+              <p class="text-2xl font-bold lg:text-4xl lg:text-center">
+                Shoes Name
+              </p>
+            </div>
+    
+            <div class="mt-6">
+              <div class="flex items-center justify-center min-h-screen w-full">
+                <!-- Card Container -->
+                <div
+                  class="flex flex-col p-6 m-3 space-y-10 bg-white rounded-2xl  md:flex-row md:space-y-0 md:space-x-10 md:m-0 md:p-16"
+                >
+                  <!-- Image Div -->
+                  <div class="w-1/2">
+                    <img
+                      src="img/slider.png"
+                      alt=""
+                      class="mx-auto duration-200 w-full hover:scale-105"
+                    />
+                  </div>
+    
+                  <!-- Content -->
+                  <div class="flex flex-col space-y-6">
+                    <!-- Label & Title Container -->
+                    <div
+                      class="flex flex-col mb-4 space-y-3 text-center md:text-left"
+                    >
+                      <div>
+                        <div
+                          class="inline-block px-3 py-1 text-sm text-white bg-black rounded-full"
+                        >
+                          New Arrival
+                        </div>
+                      </div>
+    
+                      <!-- Title -->
+                      <div class="max-w-sm text-2xl font-medium">
+                        Razer Kraken Kitty Edt Gaming Headset Quartz
+                      </div>
+                      <!-- Price Container -->
+                      <div
+                        class="flex flex-col mb-4 space-y-3 text-center md:text-left"
+                      >
+                        <p class="line-through">$799</p>
+                        <p class="text-5xl font-bold">$599</p>
+                        <p class="text-sm font-light text-gray-400">
+                          This offer is valid until April 3rd or as long as stock
+                          lasts!
+                        </p>
+                      </div>
+    
+                      <!-- Button Group -->
+                      <div class="group">
+                        <button
+                          class="w-full transition-all duration-150 bg-black-700 text-white border-b-8 border-b-black-700 rounded-lg group-hover:border-t-8 group-hover:border-b-0 group-hover:bg-black group-hover:text-white group-hover:border-t-black-700 group-hover:shadow-lg"
+                        >
+                          <div
+                            class="px-8 py-4 duration-150 bg-[#FEEA00] text-black rounded-lg group-hover:bg-black group-hover:text-white"
+                          >
+                            Order Now
+                          </div>
+                        </button>
+                      </div>
+    
+                      <!-- Stock -->
+                      <div class="flex items-center space-x-3 group">
+                        <div
+                          class="w-3 h-3 bg-green-400 rounded-full group-hover:animate-ping"
+                        ></div>
+                        <div class="text-sm">50+ pcs. in stock</div>
+                      </div>
+    
+                      <!-- Bottom Buttons Container -->
+                      <div
+                        class="flex flex-col space-y-4 md:space-y-0 md:space-x-4 md:flex-row"
+                      >
+                        <button
+                          class="flex items-center justify-center py-3 px-5 space-x-3 border-2 border-gray-300 rounded-lg shadow-sm hover:bg-opacity-30 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-150"
+                        >
+                          <img src="images/weight.png" alt="" class="w-8" />
+                          <span>Make a call</span>
+                        </button>
+    
+                        <button
+                          class="flex items-center justify-center py-3 px-5 space-x-3 border-2 border-gray-300 rounded-lg shadow-sm hover:bg-opacity-30 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-150"
+                        >
+                          <img src="images/heart.png" alt="" class="w-8" />
+                          <span>Send Message</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+    <section class="relative mx-10 mt-4 md:mb-16 lg:min-h-screen">
+      <h2 class="text-4xl font-bold capitalize">
+        Your Trekking awaits...
+      </h2>
+      <p class="pt-6 max-w-xl">
+        Cedar Trekking  Technician Provide technical support to Trekkers by performing tests and experiments.
+      </p>
+      <p class="max-w-xl pt-4">
+        Successful individuals employed in  occupations need a basic
+        understanding of industry specific financial operations, goal-setting,
+        human relations, crops, soil management, as well as livestock
+        fundamentals.
+      </p>
+      <div class="hidden absolute top-0 right-24 lg:block">
+        <div class="relative border-4 inline-block py-12 px-5 border-[#8F8E65]">
+          <div class="flex flex-col items-center justify-center space-y-6">
+            <p class="text-xl uppercase tracking-widest">
+              Cedar Trekking Shoes
+            </p>
+            <p class="text-[#8F8E65] text-4xl font-bold">Trekking Shoes</p>
+            <p class="max-w-lg text-center">
+              The most common types of equipment and machinery used on farms
+              include tractors, balers, combines, plows, mowers, planters and
+              sprayers.
+            </p>
+            <button
+              class="uppercase text-white w-44 font-semibold py-3 px-5 bg-[#8F8E65]"
+            >
+              learn more
+            </button>
+          </div>
+          <div class="absolute -bottom-[290px] -left-[400px]">
+            <img src="./img/shoes1.jpg" class="w-[60%]" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="p-8 flex flex-col-reverse space-y-8 lg:space-y-0 lg:flex-row lg:space-x-24"
+    >
+      <div>
+        <h2 class="text-4xl">What's it like to have safe hiking and trekking?</h2>
+        <p class="py-4 max-w-2xl text-lg">
+          Responsible for researching, developing
+          and testing food and other agricultural products. They assist with
+          setting up laboratory or field equipment required for testing and
+          conduct experiments to improve the quality, resilience and yield of
+          plants and animals.
+        </p>
+       
+      </div>
+      <div>
+        <img
+          src="./img/shoes12.jpg"
+          class="rounded-lg mb-8 md:mb-0 w-[80%]"
+          alt=""
+        />
+      </div>
+    </section>
+
+
+    <!-- Contact -->
+    <section class="bg-[#FEEA00] mt-20">
+      <div class="p-4 md:p-8 py-16 flex justify-center items-center">
+        <div
+          class="flex flex-col space-y-6 lg:space-y-0 lg:flex-row lg:space-x-16 lg:items-center"
+        >
+          <div class="flex flex-col space-y-4">
+            <p
+              class="text-[#2b3132] text-lg font-semibold uppercase md:text-xl"
+            >
+              Make a call or fill form
+            </p>
+            <p class="text-black text-sm md:text-4xl font-bold">
+              Contact our Agent to get a Quote
+            </p>
+          </div>
+
+          <button
+            class="whitespace-nowrap font-semibold bg-white py-3 px-5 w-56"
+          >
+            Make an Appointment
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#353b3c]">
+      <div class="flex items-center">
+        <div
+          class="w-full flex flex-col space-y-6 lg:items-center md:space-y-0 md:flex-row lg:justify-between py-6 px-4"
+        >
+          <div class="ml-16">
+            <img
+              src="./img/logorancedar.png"
+              alt="Site Logo"
+              class="ml-12 w-12 h-12"
+            />
+          </div>
+
+          <div class="flex space-x-4">
+            <div
+              class="flex justify-center items-center w-10 h-10 bg-[#1a1e1f] duration-200 hover:cursor-pointer hover:bg-[#FEEA00] transition ease-in-out"
+            >
+              <img src="./img/facebook.png" class="w-8 h-8" alt="" />
+            </div>
+            <div
+              class="flex justify-center items-center w-10 h-10 bg-[#1a1e1f] duration-200 hover:cursor-pointer hover:bg-[#FEEA00] transition ease-in-out"
+            >
+              <img src="./img/twitter.png" class="w-8 h-8" alt="" />
+            </div>
+            <div
+              class="flex justify-center items-center w-10 h-10 bg-[#1a1e1f] duration-200 hover:cursor-pointer hover:bg-[#FEEA00] transition ease-in-out"
+            >
+              <img src="./img/linkedin.png" class="w-8 h-8" alt="" />
+            </div>
+            <div
+              class="flex justify-center items-center w-10 h-10 bg-[#1a1e1f] duration-200 hover:cursor-pointer hover:bg-[#FEEA00] transition ease-in-out"
+            >
+              <img src="./img/instagram.png" class="w-8 h-8" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr />
+
+      <div class="flex items-center mt-8 p-6">
+        <div
+          class="flex flex-col space-y-10 justify-around lg:space-y-0 lg:flex-row lg:space-x-16"
+        >
+          <div
+            class="flex flex-col space-y-6 md:space-y-0 md:flex-row md:space-x-16"
+          >
+            <div class="flex flex-col space-y-6">
+              <p class="text-white max-w-xs pr-24 lg:pr-0">
+                Cedar-Ran Company is one of the leading public sector non life
+                insurance companies of India, Headquartered in Kolkata, NIC’s
+                foreign operation is carried out through its branch office in
+                Nepal.
+              </p>
+              <!-- <div class="flex">
+                <div class="p-3 md:py-3 md:px-5 bg-white">
+                  <input
+                    type="email"
+                    placeholder="Email address"
+                    class="outline-none border-none placeholder:text-[#4d4d4d] placeholder:text-lg"
+                  />
+                </div>
+                <div class="bg-[#FEEA00] p-4 flex justify-center items-center">
+                  <img src="./img/arrow-right.png" class="w-8 h-8" alt="" />
+                </div>
+              </div> -->
+            </div>
+
+            <div class="flex flex-col space-y-6">
+              <p class="uppercase text-white text-lg font-bold">Explore</p>
+              <div class="flex flex-col space-y-6">
+                <a
+                  href="#"
+                  class="text-white font-bold duration-200 hover:text-[#FEEA00] transition ease-in-out"
+                  >About</a
+                >
+                <a
+                  href="#"
+                  class="text-white font-bold duration-200 hover:text-[#FEEA00] transition ease-in-out"
+                  >Our Team</a
+                >
+                <a
+                  href="#"
+                  class="text-white font-bold duration-200 hover:text-[#FEEA00] transition ease-in-out"
+                  >Locations</a
+                >
+                <a
+                  href="#"
+                  class="text-white font-bold duration-200 hover:text-[#FEEA00] transition ease-in-out"
+                  >Gallery</a
+                >
+                <a
+                  href="#"
+                  class="text-white font-bold duration-200 hover:text-[#FEEA00] transition ease-in-out"
+                  >News & Blog</a
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex flex-col space-y-6 md:space-y-0 md:flex-row md:space-x-64"
+          >
+            <div class="flex flex-col space-y-8">
+              <p class="uppercase text-white font-bold text-lg">Products</p>
+              <div class="flex flex-col space-y-6">
+                <a
+                  href="#"
+                  class="text-white capitalize text-lg duration-200 hover:text-[#FEEA00] transition ease-in-out"
+                  >Property Insurance</a
+                >
+                <a
+                  href="#"
+                  class="text-white capitalize text-lg duration-200 hover:text-[#FEEA00] transition ease-in-out"
+                  >Auto Insurance</a
+                >
+                <a
+                  href="#"
+                  class="text-white capitalize text-lg duration-200 hover:text-[#FEEA00] transition ease-in-out"
+                  >Health Insurance</a
+                >
+                <a
+                  href="#"
+                  class="text-white capitalize text-lg duration-200 hover:text-[#FEEA00] transition ease-in-out"
+                  >Business Insurance</a
+                >
+              </div>
+            </div>
+
+            <div class="flex flex-col space-y-8">
+              <div class="flex flex-col space-y-6">
+                <p class="uppercase font-bold text-white">You've question</p>
+                <div class="flex flex-col space-y-4">
+                  <a href="#" class="text-[#FEEA00]">Get a Quote</a>
+                  <p class="text-white font-semibold">666 888 000</p>
+                </div>
+                <div class="flex flex-col space-y-4">
+                  <a href="#" class="text-[#FEEA00]">Send Email</a>
+                  <p class="text-white font-semibold">info@cedar.com</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      window.onload = function () {
+        const preloader = document.getElementById("preloader");
+        const content = document.getElementById("content");
+
+        preloader.style.display = "none"; // Hide preloader
+        content.classList.remove("hidden"); // Show content
+      };
+
+      // Get the button
+      let goToTopBtn = document.getElementById("goToTopBtn");
+
+      // When the user scrolls down 100px from the top of the document, show the button
+      window.onscroll = function () {
+        scrollFunction();
+      };
+
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 100 ||
+          document.documentElement.scrollTop > 100
+        ) {
+          goToTopBtn.classList.remove("hidden");
+        } else {
+          goToTopBtn.classList.add("hidden");
+        }
+      }
+
+      // When the user clicks on the button, scroll to the top of the document
+      goToTopBtn.onclick = function () {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      };
+      // Burger menus
+      document.addEventListener("DOMContentLoaded", function () {
+        // open
+        const burger = document.querySelectorAll(".navbar-burger");
+        const menu = document.querySelectorAll(".navbar-menu");
+
+        if (burger.length && menu.length) {
+          for (var i = 0; i < burger.length; i++) {
+            burger[i].addEventListener("click", function () {
+              for (var j = 0; j < menu.length; j++) {
+                menu[j].classList.toggle("hidden");
+              }
+            });
+          }
+        }
+
+        // close
+        const close = document.querySelectorAll(".navbar-close");
+        const backdrop = document.querySelectorAll(".navbar-backdrop");
+
+        if (close.length) {
+          for (var i = 0; i < close.length; i++) {
+            close[i].addEventListener("click", function () {
+              for (var j = 0; j < menu.length; j++) {
+                menu[j].classList.toggle("hidden");
+              }
+            });
+          }
+        }
+
+        if (backdrop.length) {
+          for (var i = 0; i < backdrop.length; i++) {
+            backdrop[i].addEventListener("click", function () {
+              for (var j = 0; j < menu.length; j++) {
+                menu[j].classList.toggle("hidden");
+              }
+            });
+          }
+        }
+      });
+
+      let defaultTransform = 0;
+      function goNext() {
+        defaultTransform = defaultTransform - 398;
+        var slider = document.getElementById("slider");
+        if (Math.abs(defaultTransform) >= slider.scrollWidth / 1.7)
+          defaultTransform = 0;
+        slider.style.transform = "translateX(" + defaultTransform + "px)";
+      }
+      next.addEventListener("click", goNext);
+      function goPrev() {
+        var slider = document.getElementById("slider");
+        if (Math.abs(defaultTransform) === 0) defaultTransform = 0;
+        else defaultTransform = defaultTransform + 398;
+        slider.style.transform = "translateX(" + defaultTransform + "px)";
+      }
+      prev.addEventListener("click", goPrev);
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const navbar = document.querySelector("nav");
+        let lastScrollTop = 0;
+        let isScrollingUp = false;
+        let isNavbarVisible = true;
+        let throttleTimeout = null;
+
+        window.addEventListener("scroll", function () {
+          const scrollTop =
+            window.pageYOffset || document.documentElement.scrollTop;
+
+          // Throttle the scroll event to avoid rapid toggling
+          if (throttleTimeout) {
+            clearTimeout(throttleTimeout);
+          }
+
+          throttleTimeout = setTimeout(() => {
+            if (scrollTop > lastScrollTop && isNavbarVisible) {
+              // Scrolling down and navbar is visible -> hide the navbar
+              navbar.style.top = `-${navbar.offsetHeight}px`;
+              isNavbarVisible = false;
+            } else if (scrollTop < lastScrollTop && !isNavbarVisible) {
+              // Scrolling up and navbar is hidden -> show the navbar
+              navbar.style.top = "0";
+              isNavbarVisible = true;
+            }
+
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Avoid negative values
+          }, 100); // Adjust the delay as needed (higher values reduce the chance of flickering)
+        });
+      });
+    </script>
+    <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
+  </body>
+</html>
+
+
+
+    

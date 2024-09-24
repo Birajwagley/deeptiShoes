@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+      integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="./css/main.css" />
+    <title>Cedar-Ran</title>
+    <style>
+      /* Add this CSS to your styles */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 50;
+        transition: top 0.3s linear;
+      }
+
+      @keyframes slideLeftToRight {
+        0% {
+          transform: translateX(-100%);
+        }
+
+        100% {
+          transform: translateX(50%);
+        }
+      }
+
+      .animate-slide {
+        animation: slideLeftToRight 3s ease infinite;
+      }
+    </style>
+  </head>
+  <!-- #FEEA00 -->
+
+  <body class="">
+    <!-- Desktop Header -->
+    <nav class="sticky w-full top-0 left-0 right-0 z-50">
+      <div
+        class="flex justify-between items-center p-4 bg-black shadow-xl lg:space-x-12"
+      >
+        <div class="flex items-center justify-between xl:space-x-12">
+          <img
+            src="./img/logorancedarresize.png"
+            class="pr-6 lg:pr-0"
+            height="50"
+            width="80"
+            alt=""
+          />
+
+          <div
+            class="hidden pl-12 lg:flex lg:space-x-6 lg:items-center lg:justify-center"
+          >
+            <a
+              href="#"
+              class="font-semibold border-b-2 border-sky-500 text-white focus:border-b-2 focus:border-cyan-500 focus:text-cyan-500"
+              >Home</a
+            >
+
+            <div class="group inline-block">
+              <button
+                aria-haspopup="true"
+                aria-controls="menu"
+                class="bg-black outline-none focus:outline-none pl-3 py-1 rounded-sm flex items-center min-w-24"
+              >
+                <span class="font-semibold flex-1 pr-2 text-white">About</span>
+                <span>
+                  <svg
+                    class="fill-current h-4 w-4 transform group-hover:-rotate-180 transition duration-150 ease-in-out"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                    />
+                  </svg>
+                </span>
+              </button>
+              <ul
+                id="menu"
+                aria-hidden="true"
+                class="flex flex-col z-50 space-y-6 bg-white border p-4 rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top min-w-24"
+              >
+                <li class="rounded-sm px-1 py-1 hover:bg-gray-100">
+                  <a href="ceoMessage.html">Message from CEO</a>
+                </li>
+                <li class="rounded-sm px-1 py-1 z-50 hover:bg-gray-100">
+                  <a href="hod.html">HOD</a>
+                </li>
+                <li class="rounded-sm px-1 py-1 hover:bg-gray-100">
+                  <a href="missionVision.html">Mission and Vision</a>
+                </li>
+                <li class="rounded-sm relative px-1 py-1 hover:bg-gray-100">
+                  <button
+                    aria-haspopup="true"
+                    aria-controls="menu-lang"
+                    class="w-full text-left flex items-center outline-none focus:outline-none"
+                  >
+                    <span class="pr-1 flex-1">Executive</span>
+                    <span class="mr-auto">
+                      <svg
+                        class="fill-current h-4 w-4 transition duration-150 ease-in-out"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                  <ul
+                    aria-hidden="true"
+                    class="flex flex-col space-y-6 bg-white p-8 border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-24"
+                  >
+                    <li class="px-1 py-1 hover:bg-gray-100">
+                      <a href="deputyCeo.html"> Deputy CEO</a>
+                    </li>
+                    <li class="rounded-sm relative px-1 py-1 hover:bg-gray-100">
+                      <button
+                        aria-haspopup="true"
+                        class="w-full text-left flex items-center outline-none focus:outline-none"
+                      >
+                        <span class="pr-1 flex-1"
+                          ><a href="management.html">Management</a>
+                        </span>
+                        <span class="mr-auto">
+                          <svg
+                            class="fill-current h-4 w-4 transition duration-150 ease-in-out"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                          >
+                            <path
+                              d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                            />
+                          </svg>
+                        </span>
+                      </button>
+                      <ul
+                        aria-hidden="true"
+                        class="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-48"
+                      >
+                        <li class="px-6 py-3 hover:bg-gray-100">
+                          <a href=""></a> Corporate Management
+                        </li>
+                        <li class="px-6 py-3 hover:bg-gray-100">
+                          <a href=""></a> Local Management Committee
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li class="rounded-sm px-1 py-1 hover:bg-gray-100">
+                  Objectives
+                </li>
+                <li class="rounded-sm px-1 py-1 hover:bg-gray-100">Values</li>
+                <li class="rounded-sm px-1 py-1 hover:bg-gray-100">
+                  Key person
+                </li>
+                <li class="rounded-sm px-1 py-1 hover:bg-gray-100">
+                  Nepal Management Committee
+                </li>
+
+                <li class="rounded-sm px-1 py-1 hover:bg-gray-100">
+                  <a href="surveyors.html">Agents/Surveyor</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="group inline-block">
+              <button
+                aria-haspopup="true"
+                aria-controls="menu"
+                class="outline-none focus:outline-none px-1 py-1 bg-black rounded-sm flex items-center min-w-24"
+              >
+                <span class="pr-1 font-semibold flex-1 text-white"
+                  >Download</span
+                >
+                <span>
+                  <svg
+                    class="fill-current h-4 w-4 transform group-hover:-rotate-180 transition duration-150 ease-in-out"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                    />
+                  </svg>
+                </span>
+              </button>
+              <ul
+                aria-hidden="true"
+                class="flex flex-col space-y-6 bg-white border p-8 rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top min-w-24"
+              >
+                <li class="rounded-sm px-3 py-1 hover:bg-gray-100">
+                  Claim Estimation Form
+                </li>
+                <li class="rounded-sm px-3 py-1 hover:bg-gray-100">
+                  Financial Reports
+                </li>
+                <li class="rounded-sm px-3 py-1 hover:bg-gray-100">Kyc Form</li>
+                <li class="rounded-sm px-3 py-1 hover:bg-gray-100">
+                  Proposal Forms
+                </li>
+                <li class="rounded-sm px-3 py-1 hover:bg-gray-100">Tender</li>
+                <li class="rounded-sm px-3 py-1 hover:bg-gray-100">Other</li>
+              </ul>
+            </div>
+            <a href="#" class="font-semibold text-white">Contact</a>
+          </div>
+        </div>
+
+        <div class="flex space-x-4 items-center">
+          <img
+            src="./img/facebookwhite.png"
+            class="hidden w-6 h-6 lg:block"
+            alt=""
+          />
+          <img
+            src="./img/instagramwhite.png"
+            class="hidden w-6 h-6 lg:block"
+            alt=""
+          />
+          <img
+            src="./img/twitterwhite.png"
+            class="hidden w-6 h-6 lg:block"
+            alt=""
+          />
+          <img
+            src="./img/youtubewhite.png"
+            class="hidden w-6 h-6 lg:block"
+            alt=""
+          />
+
+          <div class="flex flex-col space-y-2 items-end">
+            <div class="flex space-x-8 items-center">
+              <div class="lg:hidden">
+                <button
+                  class="navbar-burger flex items-center text-blue-600 p-3"
+                >
+                  <svg
+                    class="block h-6 w-6 fill-current"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <title>Mobile menu</title>
+                    <path
+                      d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Quick Access -->
+    <nav id="mySidenav" class="sidenav hidden md:block">
+      <a href="#header" class="flex items-center"
+        ><span class="text-sm py-[5px]">Home</span>
+        <i class="pl-6 fas fa-house-damage" aria-hidden="true"></i
+      ></a>
+
+      <a href="#" class="flex items-center"
+        ><span class="text-sm py-[5px]">Home</span>
+        <i class="fas fa-box" aria-hidden="true"></i
+      ></a>
+      <a href="#" class="flex items-center"
+        ><span class="text-sm py-[5px]">Home</span>
+
+        <i class="fas fa-search" aria-hidden="true"></i
+      ></a>
+      <a href="#" class="flex space-x-4 items-center"
+        ><span class="text-sm py-[5px]">Home</span>
+        <i class="fas fa-envelope" aria-hidden="true"></i
+      ></a>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <nav id="mySidenav" class="sidenav hidden md:block">
+      <a href="#header" class="flex items-center"
+        >Home <i class="pl-6 fas fa-house-damage" aria-hidden="true"></i
+      ></a>
+
+      <a href="#" class="flex items-center"
+        ><span class="text-sm py-[5px]">products</span>
+        <i class="fas fa-box" aria-hidden="true"></i
+      ></a>
+      <a href="#" class="flex items-center"
+        ><span class="text-sm -ml-2 pl-[3px] py-[5px]">Lodge Claim</span>
+        <i class="fas fa-search" aria-hidden="true"></i
+      ></a>
+      <a href="#" class="flex space-x-4 items-center"
+        ><span class="text-sm -ml-2 pl-[3px] py-[5px]">Newsletter</span>
+        <i class="fas fa-envelope" aria-hidden="true"></i
+      ></a>
+    </nav>
+
+    <div class="navbar-menu relative z-50 hidden">
+      <div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
+      <nav
+        class="fixed top-0 left-0 bottom-0 flex flex-col w-[90%] max-w-sm py-6 px-6 bg-white border-r overflow-y-auto"
+      >
+        <div class="flex items-center mb-8">
+          <a class="mr-auto text-3xl font-bold leading-none" href="#">
+            <img src="./img/logorancedarresize.png"
+            class="pr-6 lg:pr-0"
+            height="50"
+            width="80"
+            alt="" />
+          </a>
+          <button class="navbar-close">
+            <svg
+              class="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div>
+          <ul>
+            <li class="mb-1">
+              <a
+                class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
+                href="index.html"
+                >Home</a
+              >
+            </li>
+
+            <li class="group">
+              <button
+                class="outline-none focus:outline-none p-4 flex items-center text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
+              >
+                <span class="pr-1 font-semibold flex-1">About</span>
+                <span>
+                  <svg
+                    class="fill-current h-4 w-4 transform group-hover:-rotate-180 transition duration-150 ease-in-out"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                    />
+                  </svg>
+                </span>
+              </button>
+              <ul
+                class="bg-white p-4 border rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top min-w-24"
+              >
+                <li class="rounded-sm px-3 py-4 hover:bg-gray-100">
+                  <a href="about.html">Company Profile</a>
+                </li>
+                <li class="rounded-sm px-3 py-4 hover:bg-gray-100">
+                  <a href="ceoMessage.html">Message From CEO</a>
+                </li>
+                
+                <li class="rounded-sm px-3 py-4 hover:bg-gray-100">
+                  <a href="missionVision.html">Mission and Vision</a>
+                </li>
+                <li class="rounded-sm px-3 py-4 hover:bg-gray-100">
+                  <a href="management.html">Management Commitee</a>
+                </li>
+              </ul>
+            </li>
+            <li class="mb-1">
+              <a
+                class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
+                href="blog.html"
+                >Blog</a
+              >
+            </li>
+            <li class="mb-1">
+              <a
+                class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
+                href="contactUs.html"
+                >Contact Us </a
+              >
+            </li>
+
+            <!-- <li class="group block">
+              <button
+                class="outline-none focus:outline-none p-4 flex items-center text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
+              >
+                <span class="pr-1 font-semibold flex-1">Download</span>
+              </button>
+              <ul
+                class="bg-white p-4 border rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top min-w-24"
+              >
+                <li class="rounded-sm px-3 py-4 hover:bg-gray-100">
+                  <a href="#">Claim Estimation Form</a>
+                </li>
+                <li class="rounded-sm px-3 py-4 hover:bg-gray-100">
+                  <a href="#">Financial Reports</a>
+                </li>
+                <li class="rounded-sm px-3 py-4 hover:bg-gray-100">
+                  <a href="#">Kyc Form</a>
+                </li>
+
+                <li class="rounded-sm px-3 py-4 hover:bg-gray-100">
+                  <a href="#">Proposal Forms</a>
+                </li>
+                <li class="rounded-sm px-3 py-4 hover:bg-gray-100">
+                  <a href="#">Tender</a>
+                </li>
+                <li class="rounded-sm px-3 py-4 hover:bg-gray-100">
+                  <a href="#">Other</a>
+                </li>
+              </ul>
+            </li> -->
+
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <section class="mb-10">
+      <div
+        class="relative overflow-hidden bg-no-repeat bg-cover"
+        style="
+          background-image: url('./img/blog.jpg');
+          background-position: center;
+          background-size: cover;
+          height: 50vh;
+        "
+      >
+        <div
+          class="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed"
+          style="background-color: rgba(0, 0, 0, 0.75)"
+        >
+          <div class="flex justify-center items-center h-full">
+            <div class="text-white px-6 md:px-12">
+              <div class="absolute bottom-4 left-6 p-4 px-8 rounded-xl">
+                <div class="flex flex-col space-y-6">
+                  <p class="text-white md:text-4xl font-bold">Blog Name</p>
+                  <div class="flex items-center space-x-4">
+                    <p class="text-white md:text-xl font-semibold">Home /</p>
+                    <p class="text-white md:text-xl font-semibold">Blog /</p>
+                    <div class="w-4 h-4 rounded-full bg-[#34DA89]"></div>
+                    <p class="text-white md:text-xl font-semibold">Blog Name</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="px-6 flex space-x-6 items-center  flex-wrap">
+        <!-- Main Content -->
+        <div class="w-full md:w-[68%] p-4">
+          <div class="items-center justify-center">
+            <img
+            src="/img/blog-detail-image.jpg"
+            class="pr-10 w-full md:w-[100%] rounded-xl"
+            alt=""
+          />
+          </div>
+          <p class="text-[#828282] mt-8">Feb 08, 2024</p>
+          <p class="text-2xl text-[#222] font-semibold mt-4">
+            Standard Post Format
+          </p>
+          <p class="max-w-2xl mt-5 text-[#444]">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt
+            tempora laudantium molestiae. Libero a error id dicta impedit rerum!
+            Accusantium consectetur illo tempora velit consequatur, sit earum
+            omnis inventore, voluptas vel rerum temporibus ex dignissimos
+            assumenda pariatur neque explicabo autem.
+          </p>
+          <div class="mt-5 flex space-x-8">
+            <img src="/img/quote.png" class="h-6 w-6" alt="" />
+            <p class="text-[#818080] text-xl">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Molestiae, incidunt!
+            </p>
+
+          </div>
+          <p class="max-w-3xl mt-5 text-[#444]">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum ea
+            iure culpa odio quasi voluptate nemo corporis et dolor, ullam
+            consequuntur eveniet! Quos dolore, saepe quas suscipit nam
+            voluptatibus repellat neque corrupti amet, placeat provident error
+            possimus tenetur numquam laborum! Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Porro itaque ad quia fuga similique
+            expedita sed adipisci, aut iusto nihil.
+          </p>
+          <p class="max-w-3xl mt-5 text-[#444]">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum ea
+            iure culpa odio quasi voluptate nemo corporis et dolor, ullam
+            consequuntur eveniet! Quos dolore, saepe quas suscipit nam
+            voluptatibus repellat neque corrupti amet, placeat provident error
+            possimus tenetur numquam laborum! Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Porro itaque ad quia fuga similique
+            expedita sed adipisci, aut iusto nihil.
+          </p>
+          <div class="mt-5 grid gap-6 grid-cols-2">
+            <div class="flex space-x-5 items-center">
+              <img src="/img/checkout.png" class="w-5" alt="" />
+              <p>Lorem ipsum dolor sit amet consectetur.</p>
+            </div>
+            <div class="flex space-x-5 items-center">
+              <img src="/img/checkout.png" class="w-5" alt="" />
+              <p>Lorem ipsum dolor sit amet consectetur.</p>
+            </div>
+            <div class="flex space-x-5 items-center">
+              <img src="/img/checkout.png" class="w-5" alt="" />
+              <p>Lorem ipsum dolor sit amet consectetur.</p>
+            </div>
+            <div class="flex space-x-5 items-center">
+              <img src="/img/checkout.png" class="w-5" alt="" />
+              <p>Lorem ipsum dolor sit amet consectetur.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar Content -->
+        <div class="w-full md:w-[28%]">
+          <div class="bg-[#f3f4f6] rounded-xl p-5 mt-10">
+            <div class="flex w-full">
+              <p class="text-[#023f88] text-base font-semibold">Recent Posts</p>
+              <p class="text-[#023f88] text-base font-semibold">
+                View All Posts
+              </p>
+            </div>
+
+            <!-- Recent Posts -->
+            <div class="mt-8 bg-white p-4 rounded-2xl shadow-xl">
+              <div class="flex space-x-10">
+                <div class="w-[66.14px] h-[66.14px]">
+                  <img src="/img/News-Image-3.jpg" class="w-full h-full" alt="" />
+                </div>
+                <div class="flex flex-col space-y-1">
+                  <p class="flex space-x-3 items-center">
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 1024 1024"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                      ></path>
+                      <path
+                        d="M686.7 638.6L544.1 535.5V288c0-4.4-3.6-8-8-8H488c-4.4 0-8 3.6-8 8v275.4c0 2.6 1.2 5 3.3 6.5l165.4 120.6c3.6 2.6 8.6 1.8 11.2-1.7l28.6-39c2.6-3.7 1.8-8.7-1.8-11.2z"
+                      ></path>
+                    </svg>
+                    <span>11 Feb, 2024</span>
+                  </p>
+                  <p class="text-sm">
+                    शाखारहित बैकिङ्ग सेवा अबरुद्ध हुने सम्बन्धी सूचना
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="mt-8 bg-white p-4 rounded-2xl shadow-xl">
+              <div class="flex space-x-10">
+                <div class="w-[66.14px] h-[66.14px]">
+                  <img src="/img/News-Image-3.jpg" class="w-full h-full" alt="" />
+                </div>
+                <div class="flex flex-col space-y-1">
+                  <p class="flex space-x-3 items-center">
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 1024 1024"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                      ></path>
+                      <path
+                        d="M686.7 638.6L544.1 535.5V288c0-4.4-3.6-8-8-8H488c-4.4 0-8 3.6-8 8v275.4c0 2.6 1.2 5 3.3 6.5l165.4 120.6c3.6 2.6 8.6 1.8 11.2-1.7l28.6-39c2.6-3.7 1.8-8.7-1.8-11.2z"
+                      ></path>
+                    </svg>
+                    <span>11 Feb, 2024</span>
+                  </p>
+                  <p class="text-sm">
+                    शाखारहित बैकिङ्ग सेवा अबरुद्ध हुने सम्बन्धी सूचना
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="mt-8 bg-white p-4 rounded-2xl shadow-xl">
+              <div class="flex space-x-10">
+                <div class="w-[66.14px] h-[66.14px]">
+                  <img src="/img/News-Image-3.jpg" class="w-full h-full" alt="" />
+                </div>
+                <div class="flex flex-col space-y-1">
+                  <p class="flex space-x-3 items-center">
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 1024 1024"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                      ></path>
+                      <path
+                        d="M686.7 638.6L544.1 535.5V288c0-4.4-3.6-8-8-8H488c-4.4 0-8 3.6-8 8v275.4c0 2.6 1.2 5 3.3 6.5l165.4 120.6c3.6 2.6 8.6 1.8 11.2-1.7l28.6-39c2.6-3.7 1.8-8.7-1.8-11.2z"
+                      ></path>
+                    </svg>
+                    <span>11 Feb, 2024</span>
+                  </p>
+                  <p class="text-sm">
+                    शाखारहित बैकिङ्ग सेवा अबरुद्ध हुने सम्बन्धी सूचना
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="mt-8 bg-white p-4 rounded-2xl shadow-xl">
+              <div class="flex space-x-10">
+                <div class="w-[66.14px] h-[66.14px]">
+                  <img src="/img/News-Image-3.jpg" class="w-full h-full" alt="" />
+                </div>
+                <div class="flex flex-col space-y-1">
+                  <p class="flex space-x-3 items-center">
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 1024 1024"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                      ></path>
+                      <path
+                        d="M686.7 638.6L544.1 535.5V288c0-4.4-3.6-8-8-8H488c-4.4 0-8 3.6-8 8v275.4c0 2.6 1.2 5 3.3 6.5l165.4 120.6c3.6 2.6 8.6 1.8 11.2-1.7l28.6-39c2.6-3.7 1.8-8.7-1.8-11.2z"
+                      ></path>
+                    </svg>
+                    <span>11 Feb, 2024</span>
+                  </p>
+                  <p class="text-sm">
+                    शाखारहित बैकिङ्ग सेवा अबरुद्ध हुने सम्बन्धी सूचना
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="mt-8 bg-white p-4 rounded-2xl shadow-xl">
+              <div class="flex space-x-10">
+                <div class="w-[66.14px] h-[66.14px]">
+                  <img src="/img/News-Image-3.jpg" class="w-full h-full" alt="" />
+                </div>
+                <div class="flex flex-col space-y-1">
+                  <p class="flex space-x-3 items-center">
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 1024 1024"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                      ></path>
+                      <path
+                        d="M686.7 638.6L544.1 535.5V288c0-4.4-3.6-8-8-8H488c-4.4 0-8 3.6-8 8v275.4c0 2.6 1.2 5 3.3 6.5l165.4 120.6c3.6 2.6 8.6 1.8 11.2-1.7l28.6-39c2.6-3.7 1.8-8.7-1.8-11.2z"
+                      ></path>
+                    </svg>
+                    <span>11 Feb, 2024</span>
+                  </p>
+                  <p class="text-sm">
+                    शाखारहित बैकिङ्ग सेवा अबरुद्ध हुने सम्बन्धी सूचना
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="mt-8 bg-white p-4 rounded-2xl shadow-xl">
+              <div class="flex space-x-10">
+                <div class="w-[66.14px] h-[66.14px]">
+                  <img src="/img/News-Image-3.jpg" class="w-full h-full" alt="" />
+                </div>
+                <div class="flex flex-col space-y-1">
+                  <p class="flex space-x-3 items-center">
+                    <svg
+                      stroke="currentColor"
+                      fill="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 1024 1024"
+                      height="1em"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                      ></path>
+                      <path
+                        d="M686.7 638.6L544.1 535.5V288c0-4.4-3.6-8-8-8H488c-4.4 0-8 3.6-8 8v275.4c0 2.6 1.2 5 3.3 6.5l165.4 120.6c3.6 2.6 8.6 1.8 11.2-1.7l28.6-39c2.6-3.7 1.8-8.7-1.8-11.2z"
+                      ></path>
+                    </svg>
+                    <span>11 Feb, 2024</span>
+                  </p>
+                  <p class="text-sm">
+                    शाखारहित बैकिङ्ग सेवा अबरुद्ध हुने सम्बन्धी सूचना
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="mt-5 bg-white shadow-lg rounded-xl p-5 flex justify-center"
+          >
+            <div class="flex flex-col space-y-5 items-center">
+              <img src="/img/folder.png" class="w-1/4" alt="" />
+              <p>Download here</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section>
+      <div class="m-10">
+        <h2 class="text-[#023f88] text-3xl font-semibold">Gallery</h2>
+
+        <div
+          class="mt-5 grid gap-6 grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
+        >
+          <div class="w-[280px] h-[150px]">
+            <img
+              src="img\rural insur.jpg"
+              class="w-full h-full rounded-md"
+              alt=""
+            />
+          </div>
+          <div class="w-[280px] h-[150px]">
+            <img
+              src="img\rural insur.jpg"
+              class="w-full h-full rounded-md"
+              alt=""
+            />
+          </div>
+          <div class="w-[280px] h-[150px]">
+            <img
+              src="img\rural insur.jpg"
+              class="w-full h-full rounded-md"
+              alt=""
+            />
+          </div>
+          <div class="w-[280px] h-[150px]">
+            <img
+              src="img\rural insur.jpg"
+              class="w-full h-full rounded-md"
+              alt=""
+            />
+          </div>
+          <div class="w-[280px] h-[150px]">
+            <img
+              src="img\rural insur.jpg"
+              class="w-full h-full rounded-md"
+              alt=""
+            />
+          </div>
+          <div class="w-[280px] h-[150px]">
+            <img
+              src="img\rural insur.jpg"
+              class="w-full h-full rounded-md"
+              alt=""
+            />
+          </div>
+          <div class="w-[280px] h-[150px]">
+            <img
+              src="img\rural insur.jpg"
+              class="w-full h-full rounded-md"
+              alt=""
+            />
+          </div>
+          <div class="w-[280px] h-[150px]">
+            <img
+              src="img\rural insur.jpg"
+              class="w-full h-full rounded-md"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-[#FEEA00] mt-20">
+      <div class="p-4 md:p-8 py-16 flex justify-center items-center">
+        <div
+          class="flex flex-col space-y-6 lg:space-y-0 lg:flex-row lg:space-x-16 lg:items-center"
+        >
+          <div class="flex flex-col space-y-4">
+            <p
+              class="text-[#2b3132] text-lg font-semibold uppercase md:text-xl"
+            >
+              Make a call or fill form
+            </p>
+            <p class="text-black text-sm md:text-4xl font-bold">
+              Contact our Agent to get a Quote
+            </p>
+          </div>
+
+          <button
+            class="whitespace-nowrap font-semibold bg-white py-3 px-5 w-56"
+          >
+            Make an Appointment
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-[#353b3c]">
+      <div class="flex items-center">
+        <div
+          class="w-full flex flex-col space-y-6 lg:items-center md:space-y-0 md:flex-row lg:justify-between py-6 px-4"
+        >
+          <div class="ml-16">
+            <img
+              src="./img/logorancedar.png"
+              alt="Site Logo"
+              class="ml-12 w-12 h-12"
+            />
+          </div>
+
+          <div class="flex space-x-4">
+            <div
+              class="flex justify-center items-center w-10 h-10 bg-[#1a1e1f] duration-200 hover:cursor-pointer hover:bg-[#FEEA00] transition ease-in-out"
+            >
+              <img src="./img/facebook.png" class="w-8 h-8" alt="" />
+            </div>
+            <div
+              class="flex justify-center items-center w-10 h-10 bg-[#1a1e1f] duration-200 hover:cursor-pointer hover:bg-[#FEEA00] transition ease-in-out"
+            >
+              <img src="./img/twitter.png" class="w-8 h-8" alt="" />
+            </div>
+            <div
+              class="flex justify-center items-center w-10 h-10 bg-[#1a1e1f] duration-200 hover:cursor-pointer hover:bg-[#FEEA00] transition ease-in-out"
+            >
+              <img src="./img/linkedin.png" class="w-8 h-8" alt="" />
+            </div>
+            <div
+              class="flex justify-center items-center w-10 h-10 bg-[#1a1e1f] duration-200 hover:cursor-pointer hover:bg-[#FEEA00] transition ease-in-out"
+            >
+              <img src="./img/instagram.png" class="w-8 h-8" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr />
+
+      <div class="flex items-center mt-8 p-6">
+        <div
+          class="flex flex-col space-y-10 justify-around lg:space-y-0 lg:flex-row lg:space-x-16"
+        >
+          <div
+            class="flex flex-col space-y-6 md:space-y-0 md:flex-row md:space-x-16"
+          >
+            <div class="flex flex-col space-y-6">
+              <p class="text-white max-w-xs pr-24 lg:pr-0">
+                Cedar-Ran Company is one of the leading public sector non life
+                insurance companies of India, Headquartered in Kolkata, NIC’s
+                foreign operation is carried out through its branch office in
+                Nepal.
+              </p>
+              <!-- <div class="flex">
+                <div class="p-3 md:py-3 md:px-5 bg-white">
+                  <input
+                    type="email"
+                    placeholder="Email address"
+                    class="outline-none border-none placeholder:text-[#4d4d4d] placeholder:text-lg"
+                  />
+                </div>
+                <div class="bg-[#FEEA00] p-4 flex justify-center items-center">
+                  <img src="./img/arrow-right.png" class="w-8 h-8" alt="" />
+                </div>
+              </div> -->
+            </div>
+
+            <div class="flex flex-col space-y-6">
+              <p class="uppercase text-white text-lg font-bold">Explore</p>
+              <div class="flex flex-col space-y-6">
+                <a
+                  href="#"
+                  class="text-white font-bold duration-200 hover:text-[#FEEA00] transition ease-in-out"
+                  >About</a
+                >
+                <a
+                  href="#"
+                  class="text-white font-bold duration-200 hover:text-[#FEEA00] transition ease-in-out"
+                  >Our Team</a
+                >
+                <a
+                  href="#"
+                  class="text-white font-bold duration-200 hover:text-[#FEEA00] transition ease-in-out"
+                  >Locations</a
+                >
+                <a
+                  href="#"
+                  class="text-white font-bold duration-200 hover:text-[#FEEA00] transition ease-in-out"
+                  >Gallery</a
+                >
+                <a
+                  href="#"
+                  class="text-white font-bold duration-200 hover:text-[#FEEA00] transition ease-in-out"
+                  >News & Blog</a
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex flex-col space-y-6 md:space-y-0 md:flex-row md:space-x-64"
+          >
+            <div class="flex flex-col space-y-8">
+              <p class="uppercase text-white font-bold text-lg">Products</p>
+              <div class="flex flex-col space-y-6">
+                <a
+                  href="#"
+                  class="text-white capitalize text-lg duration-200 hover:text-[#FEEA00] transition ease-in-out"
+                  >Property Insurance</a
+                >
+                <a
+                  href="#"
+                  class="text-white capitalize text-lg duration-200 hover:text-[#FEEA00] transition ease-in-out"
+                  >Auto Insurance</a
+                >
+                <a
+                  href="#"
+                  class="text-white capitalize text-lg duration-200 hover:text-[#FEEA00] transition ease-in-out"
+                  >Health Insurance</a
+                >
+                <a
+                  href="#"
+                  class="text-white capitalize text-lg duration-200 hover:text-[#FEEA00] transition ease-in-out"
+                  >Business Insurance</a
+                >
+              </div>
+            </div>
+
+            <div class="flex flex-col space-y-8">
+              <div class="flex flex-col space-y-6">
+                <p class="uppercase font-bold text-white">You've question</p>
+                <div class="flex flex-col space-y-4">
+                  <a href="#" class="text-[#FEEA00]">Get a Quote</a>
+                  <p class="text-white font-semibold">666 888 000</p>
+                </div>
+                <div class="flex flex-col space-y-4">
+                  <a href="#" class="text-[#FEEA00]">Send Email</a>
+                  <p class="text-white font-semibold">
+                    info@cedar.com
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Burger menus
+      document.addEventListener("DOMContentLoaded", function () {
+        // open
+        const burger = document.querySelectorAll(".navbar-burger");
+        const menu = document.querySelectorAll(".navbar-menu");
+
+        if (burger.length && menu.length) {
+          for (var i = 0; i < burger.length; i++) {
+            burger[i].addEventListener("click", function () {
+              for (var j = 0; j < menu.length; j++) {
+                menu[j].classList.toggle("hidden");
+              }
+            });
+          }
+        }
+
+        // close
+        const close = document.querySelectorAll(".navbar-close");
+        const backdrop = document.querySelectorAll(".navbar-backdrop");
+
+        if (close.length) {
+          for (var i = 0; i < close.length; i++) {
+            close[i].addEventListener("click", function () {
+              for (var j = 0; j < menu.length; j++) {
+                menu[j].classList.toggle("hidden");
+              }
+            });
+          }
+        }
+
+        if (backdrop.length) {
+          for (var i = 0; i < backdrop.length; i++) {
+            backdrop[i].addEventListener("click", function () {
+              for (var j = 0; j < menu.length; j++) {
+                menu[j].classList.toggle("hidden");
+              }
+            });
+          }
+        }
+      });
+
+      let defaultTransform = 0;
+      function goNext() {
+        defaultTransform = defaultTransform - 398;
+        var slider = document.getElementById("slider");
+        if (Math.abs(defaultTransform) >= slider.scrollWidth / 1.7)
+          defaultTransform = 0;
+        slider.style.transform = "translateX(" + defaultTransform + "px)";
+      }
+      next.addEventListener("click", goNext);
+      function goPrev() {
+        var slider = document.getElementById("slider");
+        if (Math.abs(defaultTransform) === 0) defaultTransform = 0;
+        else defaultTransform = defaultTransform + 398;
+        slider.style.transform = "translateX(" + defaultTransform + "px)";
+      }
+      prev.addEventListener("click", goPrev);
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const navbar = document.querySelector("nav");
+        let lastScrollTop = 0;
+        let isScrollingUp = false;
+        let isNavbarVisible = true;
+        let throttleTimeout = null;
+
+        window.addEventListener("scroll", function () {
+          const scrollTop =
+            window.pageYOffset || document.documentElement.scrollTop;
+
+          // Throttle the scroll event to avoid rapid toggling
+          if (throttleTimeout) {
+            clearTimeout(throttleTimeout);
+          }
+
+          throttleTimeout = setTimeout(() => {
+            if (scrollTop > lastScrollTop && isNavbarVisible) {
+              // Scrolling down and navbar is visible -> hide the navbar
+              navbar.style.top = `-${navbar.offsetHeight}px`;
+              isNavbarVisible = false;
+            } else if (scrollTop < lastScrollTop && !isNavbarVisible) {
+              // Scrolling up and navbar is hidden -> show the navbar
+              navbar.style.top = "0";
+              isNavbarVisible = true;
+            }
+
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Avoid negative values
+          }, 100); // Adjust the delay as needed (higher values reduce the chance of flickering)
+        });
+      });
+    </script>
+    <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
+  </body>
+</html>

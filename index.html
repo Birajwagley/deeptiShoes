@@ -1,0 +1,2037 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+      integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="./css/main.css" />
+    <title>Cedar-Ran</title>
+    <style>
+      /* Add this CSS to your styles */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 50;
+        transition: top 0.3s linear;
+      }
+
+      @keyframes slideLeftToRight {
+        0% {
+          transform: translateX(10%);
+        }
+
+        100% {
+          transform: translateX(50%);
+        }
+      }
+
+      .animate-slide {
+        animation: slideLeftToRight 3s ease infinite;
+      }
+    </style>
+  </head>
+  <!-- #FEEA00 -->
+
+  <body class="">
+    <div
+      id="preloader"
+      class="flex-col gap-4 w-full h-screen flex items-center justify-center bg-white fixed inset-0 z-50"
+    >
+      <div
+        class="w-20 h-20 border-4 border-transparent text-blue-400 text-4xl animate-spin flex items-center justify-center border-t-blue-400 rounded-full"
+      >
+        <div
+          class="w-16 h-16 border-4 border-transparent text-red-400 text-2xl animate-spin flex items-center justify-center border-t-red-400 rounded-full"
+        ></div>
+      </div>
+    </div>
+    <button
+      id="goToTopBtn"
+      class="z-500000 fixed bottom-4 right-4 bg-[#EF5824] text-white p-2 rounded-full shadow-lg transform transition-transform duration-300 hover:scale-110 hover:bg-black-600 hidden"
+    >
+      <img
+        src="{{ asset('assets/img/top-arrow.png') }}"
+        alt="go-to-top-button"
+        class="w-10 h-10"
+      />
+    </button>
+
+    <!-- Desktop Header -->
+    <nav class="sticky w-full top-0 left-0 right-0 z-50">
+      <div
+        class="flex justify-between items-center p-4 bg-black shadow-xl lg:space-x-12"
+      >
+        <div class="flex items-center justify-between xl:space-x-12">
+          <img
+            src="./img/logorancedarresize.png"
+            class="pr-6 lg:pr-0"
+            height="50"
+            width="80"
+            alt=""
+          />
+
+          <div
+            class="hidden pl-12 lg:flex lg:space-x-6 lg:items-center lg:justify-center"
+          >
+            <a
+              href="index.html"
+              class="font-semibold border-b-2 border-sky-500 text-white focus:border-b-2 focus:border-cyan-500 focus:text-cyan-500"
+              >Home</a
+            >
+
+            <div class="group inline-block">
+              <button
+                aria-haspopup="true"
+                aria-controls="menu"
+                class="bg-black outline-none focus:outline-none pl-3 py-1 rounded-sm flex items-center min-w-24"
+              >
+                <span class="font-semibold flex-1 pr-2 text-white">About</span>
+                <span>
+                  <svg
+                    class="fill-current h-4 w-4 transform group-hover:-rotate-180 transition duration-150 ease-in-out"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                    />
+                  </svg>
+                </span>
+              </button>
+              <ul
+                id="menu"
+                aria-hidden="true"
+                class="flex flex-col z-50 space-y-6 bg-white border p-4 rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top min-w-24"
+              >
+                <li class="rounded-sm px-1 py-1 hover:bg-gray-100">
+                  <a href="about.html">Company Profile</a>
+                </li>
+                <li class="rounded-sm px-1 py-1 hover:bg-gray-100">
+                  <a href="ceoMessage.html">Message from CEO</a>
+                </li>
+
+                <li class="rounded-sm px-1 py-1 hover:bg-gray-100">
+                  <a href="missionVision.html">Mission and Vision</a>
+                </li>
+                <li class="rounded-sm px-1 py-1 hover:bg-gray-100">
+                  <a href="management.html">ManagementCommitee</a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- <div class="group inline-block">
+              <button
+                aria-haspopup="true"
+                aria-controls="menu"
+                class="outline-none focus:outline-none px-1 py-1 bg-black rounded-sm flex items-center min-w-24"
+              >
+                <span class="pr-1 font-semibold flex-1 text-white"
+                  >Download</span
+                >
+                <span>
+                  <svg
+                    class="fill-current h-4 w-4 transform group-hover:-rotate-180 transition duration-150 ease-in-out"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                    />
+                  </svg>
+                </span>
+              </button>
+              <ul
+                aria-hidden="true"
+                class="flex flex-col space-y-6 bg-white border p-8 rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top min-w-24"
+              >
+                <li class="rounded-sm px-3 py-1 hover:bg-gray-100">
+                  Claim Estimation Form
+                </li>
+                <li class="rounded-sm px-3 py-1 hover:bg-gray-100">
+                  Financial Reports
+                </li>
+                <li class="rounded-sm px-3 py-1 hover:bg-gray-100">Kyc Form</li>
+                <li class="rounded-sm px-3 py-1 hover:bg-gray-100">
+                  Proposal Forms
+                </li>
+                <li class="rounded-sm px-3 py-1 hover:bg-gray-100">Tender</li>
+                <li class="rounded-sm px-3 py-1 hover:bg-gray-100">Other</li>
+              </ul>
+            </div> -->
+            <a href="blog.html" class="font-semibold text-white">Shop</a>
+            <a href="blog.html" class="font-semibold text-white">Blogs</a>
+            <a href="contactUs.html" class="font-semibold text-white"
+              >Contact</a
+            >
+          </div>
+        </div>
+
+        <div class="flex space-x-4 items-center">
+          <img
+            src="./img/facebookwhite.png"
+            class="hidden w-6 h-6 lg:block"
+            alt=""
+          />
+          <img
+            src="./img/instagramwhite.png"
+            class="hidden w-6 h-6 lg:block"
+            alt=""
+          />
+          <img
+            src="./img/twitterwhite.png"
+            class="hidden w-6 h-6 lg:block"
+            alt=""
+          />
+          <img
+            src="./img/youtubewhite.png"
+            class="hidden w-6 h-6 lg:block"
+            alt=""
+          />
+
+          <div class="flex flex-col space-y-2 items-end">
+            <div class="flex space-x-8 items-center">
+              <div class="lg:hidden">
+                <button
+                  class="navbar-burger flex items-center text-blue-600 p-3"
+                >
+                  <svg
+                    class="block h-6 w-6 fill-current"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <title>Mobile menu</title>
+                    <path
+                      d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Quick Access -->
+    <nav id="mySidenav" class="sidenav hidden md:block">
+      <a href="#header" class="flex items-center"
+        ><span class="text-sm py-[5px]">Home</span>
+        <i class="pl-6 fas fa-house-damage" aria-hidden="true"></i
+      ></a>
+
+      <a href="#" class="flex items-center"
+        ><span class="text-sm py-[5px]">products</span>
+        <i class="fas fa-box" aria-hidden="true"></i
+      ></a>
+      <a href="#" class="flex items-center"
+        ><span class="text-sm -ml-2 pl-[3px] py-[5px]">Lodge Claim</span>
+        <i class="fas fa-search" aria-hidden="true"></i
+      ></a>
+      <a href="#" class="flex space-x-4 items-center"
+        ><span class="text-sm -ml-2 pl-[3px] py-[5px]">Newsletter</span>
+        <i class="fas fa-envelope" aria-hidden="true"></i
+      ></a>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <nav id="mySidenav" class="sidenav hidden md:block">
+      <a href="#header" class="flex items-center"
+        >Home <i class="pl-6 fas fa-house-damage" aria-hidden="true"></i
+      ></a>
+
+      <a href="#" class="flex items-center"
+        ><span class="text-sm py-[5px]">products</span>
+        <i class="fas fa-box" aria-hidden="true"></i
+      ></a>
+      <a href="#" class="flex items-center"
+        ><span class="text-sm -ml-2 pl-[3px] py-[5px]">Lodge Claim</span>
+        <i class="fas fa-search" aria-hidden="true"></i
+      ></a>
+      <a href="#" class="flex space-x-4 items-center"
+        ><span class="text-sm -ml-2 pl-[3px] py-[5px]">Newsletter</span>
+        <i class="fas fa-envelope" aria-hidden="true"></i
+      ></a>
+    </nav>
+
+    <div class="navbar-menu relative z-50 hidden">
+      <div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
+      <nav
+        class="fixed top-0 left-0 bottom-0 flex flex-col w-[90%] max-w-sm py-6 px-6 bg-white border-r overflow-y-auto"
+      >
+        <div class="flex items-center mb-8">
+          <a class="mr-auto text-3xl font-bold leading-none" href="#">
+            <img src="./img/logorancedarresize.png"
+            class="pr-6 lg:pr-0"
+            height="50"
+            width="80"
+            alt="" />
+          </a>
+          <button class="navbar-close">
+            <svg
+              class="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div>
+          <ul>
+            <li class="mb-1">
+              <a
+                class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
+                href="index.html"
+                >Home</a
+              >
+            </li>
+
+            <li class="group">
+              <button
+                class="outline-none focus:outline-none p-4 flex items-center text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
+              >
+                <span class="pr-1 font-semibold flex-1">About</span>
+                <span>
+                  <svg
+                    class="fill-current h-4 w-4 transform group-hover:-rotate-180 transition duration-150 ease-in-out"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                    />
+                  </svg>
+                </span>
+              </button>
+              <ul
+                class="bg-white p-4 border rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top min-w-24"
+              >
+                <li class="rounded-sm px-3 py-4 hover:bg-gray-100">
+                  <a href="about.html">Company Profile</a>
+                </li>
+                <li class="rounded-sm px-3 py-4 hover:bg-gray-100">
+                  <a href="ceoMessage.html">Message From CEO</a>
+                </li>
+                
+                <li class="rounded-sm px-3 py-4 hover:bg-gray-100">
+                  <a href="missionVision.html">Mission and Vision</a>
+                </li>
+                <li class="rounded-sm px-3 py-4 hover:bg-gray-100">
+                  <a href="management.html">Management Commitee</a>
+                </li>
+              </ul>
+            </li>
+            <li class="mb-1">
+              <a
+                class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
+                href="blog.html"
+                >Blog</a
+              >
+            </li>
+            <li class="mb-1">
+              <a
+                class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
+                href="contactUs.html"
+                >Contact Us </a
+              >
+            </li>
+
+            <!-- <li class="group block">
+              <button
+                class="outline-none focus:outline-none p-4 flex items-center text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded"
+              >
+                <span class="pr-1 font-semibold flex-1">Download</span>
+              </button>
+              <ul
+                class="bg-white p-4 border rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top min-w-24"
+              >
+                <li class="rounded-sm px-3 py-4 hover:bg-gray-100">
+                  <a href="#">Claim Estimation Form</a>
+                </li>
+                <li class="rounded-sm px-3 py-4 hover:bg-gray-100">
+                  <a href="#">Financial Reports</a>
+                </li>
+                <li class="rounded-sm px-3 py-4 hover:bg-gray-100">
+                  <a href="#">Kyc Form</a>
+                </li>
+
+                <li class="rounded-sm px-3 py-4 hover:bg-gray-100">
+                  <a href="#">Proposal Forms</a>
+                </li>
+                <li class="rounded-sm px-3 py-4 hover:bg-gray-100">
+                  <a href="#">Tender</a>
+                </li>
+                <li class="rounded-sm px-3 py-4 hover:bg-gray-100">
+                  <a href="#">Other</a>
+                </li>
+              </ul>
+            </li> -->
+
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Slider Image -->
+    <section class="relative z-30">
+      <div class="max-w-screen-2xl">
+        <div id="default-carousel" class="relative" data-carousel="static">
+          <div class="overflow-hidden relative lg:h-screen rounded-lg">
+            <!-- Slide 1 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <img
+                style="background-position: center; background-size: contain"
+                src="./img/sliderimage.jpg"
+                class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2"
+                alt="Insurance"
+              />
+              <!-- New Image Overlay -->
+              <div
+                class="relative w-full h-full flex justify-center items-center px-4 py-4"
+              >
+                <div
+                  class="absolute buttom-0 end-6 right-1.5 transform -translate-x-0 text-white text-center bg-black bg-opacity-50 p-4 rounded-lg"
+                >
+                  <h5 class="text-xl font-bold">Men's Original</h5>
+                  <p class="text-2xl">Your safety is our priority.</p>
+                </div>
+                <img
+                  src="./img/slider.png"
+                  class="absolute top-1/6 left-0 animate-slide"
+                  alt="Overlay Image"
+                />
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <img
+                style="background-position: center; background-size: contain"
+                src="./img/sliderimage.jpg"
+                class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2"
+                alt="Insurance"
+              />
+              <!-- New Image Overlay -->
+              <div
+                class="relative w-full h-full flex justify-center items-center px-4 py-4"
+              >
+                <div
+                  class="absolute buttom-0 end-6 right-1.5 transform -translate-x-0 text-white text-center bg-black bg-opacity-50 p-4 rounded-lg"
+                >
+                  <h5 class="text-xl font-bold">Men's Original</h5>
+                  <p class="text-2xl">Your safety is our priority.</p>
+                </div>
+                <img
+                  src="./img/slider.png"
+                  class="absolute top-1/6 left-0 animate-slide"
+                  alt="Overlay Image"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Carousel Controls -->
+          <div class="flex absolute bottom-5 left-1/2 z-30 -translate-x-1/2">
+            <button
+              type="button"
+              class="w-3 h-3 rounded-full"
+              aria-current="false"
+              aria-label="Slide 1"
+              data-carousel-slide-to="0"
+            ></button>
+            <button
+              type="button"
+              class="w-3 h-3 rounded-full"
+              aria-current="false"
+              aria-label="Slide 2"
+              data-carousel-slide-to="1"
+            ></button>
+            <button
+              type="button"
+              class="w-3 h-3 rounded-full"
+              aria-current="false"
+              aria-label="Slide 3"
+              data-carousel-slide-to="2"
+            ></button>
+          </div>
+
+          <!-- Previous and Next Buttons -->
+          <button
+            type="button"
+            class="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
+            data-carousel-prev
+          >
+            <span
+              class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+            >
+              <svg
+                class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 19l-7-7 7-7"
+                ></path>
+              </svg>
+              <span class="hidden">Previous</span>
+            </span>
+          </button>
+          <button
+            type="button"
+            class="flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none"
+            data-carousel-next
+          >
+            <span
+              class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+            >
+              <svg
+                class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                ></path>
+              </svg>
+              <span class="hidden">Next</span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Us -->
+    <section class="my-16 text-l">
+      <div
+        class="p-6 pt-8 w-full flex flex-col space-y-6 lg:pt-0 lg:p-8 lg:space-y-0 lg:flex-row lg:space-x-24 lg:items-center lg:justify-center xl:justify-around"
+      >
+        <div class="relative lg:ml-16 flex space-x-4">
+          <img
+            src="./img/cover.png"
+            class="rounded-2xl z-30"
+            alt=""
+            style="height: 385px"
+          />
+        </div>
+        <div class="flex flex-col space-y-5">
+          <h1
+            class="uppercase text-[#004d6e] text-xl text-center font-bold tracking-widest"
+          >
+            Our Introduction
+          </h1>
+          <h4 class="text-2xl lg:text-4xl leading-snug font-extrabold max-w-lg">
+            We as the part of your
+            <span class="text-[#EF5824] fontStyle">JOURNEY</span>
+          </h4>
+          <p class="max-w-xl text-xl text-justify">
+            Cedar Trekking shoes are designed for outdoor enthusiasts who
+            prioritize durability, comfort, and performance. Featuring a rugged
+            sole for excellent grip on varied terrains, these shoes are built
+            with water-resistant materials to keep feet dry in wet conditions.
+          </p>
+
+          <a
+            href="#"
+            class="py-4 px-6 w-44 rounded-lg bg-gradient-to-r from-[#005aab] to-[#00accc] text-white font-bold"
+          >
+            <button class="w-full h-full">About Us</button>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products -->
+    <section class="bg-[#f4f3f0] mt-10 mb-10 px-4">
+      <div class="pt-8 md:pt-16 flex justify-center">
+        <div class="flex flex-col space-y-4 lg:space-y-8 text-center">
+          <div class="space-y-4 lg:space-y-6">
+            <h1
+              class="uppercase text-[#004d6e] text-xl text-center font-bold tracking-widest"
+            >
+              Our Products
+            </h1>
+
+            <p class="text-2xl font-bold lg:text-4xl lg:text-center">
+              Let us Protect you.
+            </p>
+          </div>
+          <p
+            class="text-sm max-w-xs mx-auto text-[#737879] md:text-xl md:max-w-none"
+          >
+            Cedar Trekking shoes are designed for outdoor enthusiasts who
+            prioritize durability, comfort, and performance.
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10 gap-x-6 mt-10 pb-10"
+      >
+
+        <div
+          class="w-96 mx-auto bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl mb-8"
+        >
+          <a href="shoes-detail.html">
+            <img
+              src="./img/shoes6.jpg"
+              alt="Product"
+              class="h-80 w-full object-cover rounded-t-xl"
+            />
+            <div class="px-4 py-3">
+              <span class="text-gray-400 uppercase text-xs">Brand</span>
+              <p class="text-lg font-bold text-black truncate">Product Name</p>
+              <div class="flex items-center mt-2">
+                <p class="text-lg font-semibold text-black">$149</p>
+                <del class="ml-2 text-sm text-gray-600">$199</del>
+                <div class="ml-auto">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    fill="currentColor"
+                    class="bi bi-bag-plus"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z"
+                    />
+                    <path
+                      d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div
+          class="w-96 mx-auto bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl mb-8"
+        >
+          <a href="shoes-detail.html">
+            <img
+              src="./img/shoes26.jpg"
+              alt="Product"
+              class="h-80 w-full object-cover rounded-t-xl"
+            />
+            <div class="px-4 py-3">
+              <span class="text-gray-400 uppercase text-xs">Brand</span>
+              <p class="text-lg font-bold text-black truncate">Product Name</p>
+              <div class="flex items-center mt-2">
+                <p class="text-lg font-semibold text-black">$149</p>
+                <del class="ml-2 text-sm text-gray-600">$199</del>
+                <div class="ml-auto">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    fill="currentColor"
+                    class="bi bi-bag-plus"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z"
+                    />
+                    <path
+                      d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div
+          class="w-96 mx-auto bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl mb-8"
+        >
+          <a href="shoes-detail.html">
+            <img
+              src="./img/shoes19.jpg"
+              alt="Product"
+              class="h-80 w-full object-cover rounded-t-xl"
+            />
+            <div class="px-4 py-3">
+              <span class="text-gray-400 uppercase text-xs">Brand</span>
+              <p class="text-lg font-bold text-black truncate">Product Name</p>
+              <div class="flex items-center mt-2">
+                <p class="text-lg font-semibold text-black">$149</p>
+                <del class="ml-2 text-sm text-gray-600">$199</del>
+                <div class="ml-auto">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    fill="currentColor"
+                    class="bi bi-bag-plus"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z"
+                    />
+                    <path
+                      d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div
+          class="w-96 mx-auto bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl mb-8"
+        >
+          <a href="shoes-detail.html">
+            <img
+              src="./img/shoes14.jpg"
+              alt="Product"
+              class="h-80 w-full object-cover rounded-t-xl"
+            />
+            <div class="px-4 py-3">
+              <span class="text-gray-400 uppercase text-xs">Brand</span>
+              <p class="text-lg font-bold text-black truncate">Product Name</p>
+              <div class="flex items-center mt-2">
+                <p class="text-lg font-semibold text-black">$149</p>
+                <del class="ml-2 text-sm text-gray-600">$199</del>
+                <div class="ml-auto">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    fill="currentColor"
+                    class="bi bi-bag-plus"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z"
+                    />
+                    <path
+                      d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div
+          class="w-96 mx-auto bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl mb-8"
+        >
+          <a href="shoes-detail.html">
+            <img
+              src="./img/shoes31.jpg"
+              alt="Product"
+              class="h-80 w-full object-cover rounded-t-xl"
+            />
+            <div class="px-4 py-3">
+              <span class="text-gray-400 uppercase text-xs">Brand</span>
+              <p class="text-lg font-bold text-black truncate">Product Name</p>
+              <div class="flex items-center mt-2">
+                <p class="text-lg font-semibold text-black">$149</p>
+                <del class="ml-2 text-sm text-gray-600">$199</del>
+                <div class="ml-auto">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    fill="currentColor"
+                    class="bi bi-bag-plus"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z"
+                    />
+                    <path
+                      d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div
+          class="w-96 mx-auto bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl mb-8"
+        >
+          <a href="shoes-detail.html">
+            <img
+              src="./img/shoes22.jpg"
+              alt="Product"
+              class="h-80 w-full object-cover rounded-t-xl"
+            />
+            <div class="px-4 py-3">
+              <span class="text-gray-400 uppercase text-xs">Brand</span>
+              <p class="text-lg font-bold text-black truncate">Product Name</p>
+              <div class="flex items-center mt-2">
+                <p class="text-lg font-semibold text-black">$149</p>
+                <del class="ml-2 text-sm text-gray-600">$199</del>
+                <div class="ml-auto">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    fill="currentColor"
+                    class="bi bi-bag-plus"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z"
+                    />
+                    <path
+                      d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div
+          class="w-96 mx-auto bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl mb-8"
+        >
+          <a href="shoes-detail.html">
+            <img
+              src="./img/shoes25.jpg"
+              alt="Product"
+              class="h-80 w-full object-cover rounded-t-xl"
+            />
+            <div class="px-4 py-3">
+              <span class="text-gray-400 uppercase text-xs">Brand</span>
+              <p class="text-lg font-bold text-black truncate">Product Name</p>
+              <div class="flex items-center mt-2">
+                <p class="text-lg font-semibold text-black">$149</p>
+                <del class="ml-2 text-sm text-gray-600">$199</del>
+                <div class="ml-auto">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    fill="currentColor"
+                    class="bi bi-bag-plus"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z"
+                    />
+                    <path
+                      d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div
+          class="w-96 mx-auto bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl mb-8"
+        >
+          <a href="shoes-detail.html">
+            <img
+              src="./img/shoes21.jpg"
+              alt="Product"
+              class="h-80 w-full object-cover rounded-t-xl"
+            />
+            <div class="px-4 py-3">
+              <span class="text-gray-400 uppercase text-xs">Brand</span>
+              <p class="text-lg font-bold text-black truncate">Product Name</p>
+              <div class="flex items-center mt-2">
+                <p class="text-lg font-semibold text-black">$149</p>
+                <del class="ml-2 text-sm text-gray-600">$199</del>
+                <div class="ml-auto">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    fill="currentColor"
+                    class="bi bi-bag-plus"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z"
+                    />
+                    <path
+                      d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div
+          class="w-96 mx-auto bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl mb-8"
+        >
+          <a href="shoes-detail.html">
+            <img
+              src="./img/shoes17.jpg"
+              alt="Product"
+              class="h-80 w-full object-cover rounded-t-xl"
+            />
+            <div class="px-4 py-3">
+              <span class="text-gray-400 uppercase text-xs">Brand</span>
+              <p class="text-lg font-bold text-black truncate">Product Name</p>
+              <div class="flex items-center mt-2">
+                <p class="text-lg font-semibold text-black">$149</p>
+                <del class="ml-2 text-sm text-gray-600">$199</del>
+                <div class="ml-auto">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    fill="currentColor"
+                    class="bi bi-bag-plus"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z"
+                    />
+                    <path
+                      d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div
+          class="w-96 mx-auto bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl mb-8"
+        >
+          <a href="shoes-detail.html">
+            <img
+              src="./img/shoes13.jpg"
+              alt="Product"
+              class="h-80 w-full object-cover rounded-t-xl"
+            />
+            <div class="px-4 py-3">
+              <span class="text-gray-400 uppercase text-xs">Brand</span>
+              <p class="text-lg font-bold text-black truncate">Product Name</p>
+              <div class="flex items-center mt-2">
+                <p class="text-lg font-semibold text-black">$149</p>
+                <del class="ml-2 text-sm text-gray-600">$199</del>
+                <div class="ml-auto">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    fill="currentColor"
+                    class="bi bi-bag-plus"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z"
+                    />
+                    <path
+                      d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- New Arrival -->
+    <section>
+      <div class="mt-10 p-4">
+        <div
+          class="flex flex-col space-y-6 md:mx-8 lg:m-0 lg:items-center lg:mx-20"
+        >
+          <h1
+            class="uppercase text-[#004d6e] text-xl text-center font-bold tracking-widest"
+          >
+            New Arrivals
+          </h1>
+
+          <p class="text-2xl font-bold lg:text-4xl lg:text-center">
+            Deal of the Week
+          </p>
+        </div>
+
+        <div class="mt-6">
+          <div class="flex items-center justify-center min-h-screen w-full">
+            <!-- Card Container -->
+            <div
+              class="flex flex-col p-6 m-3 space-y-10 bg-white rounded-2xl shadow-2xl md:flex-row md:space-y-0 md:space-x-10 md:m-0 md:p-16"
+            >
+              <!-- Image Div -->
+              <div class="w-1/2">
+                <img
+                  src="img/slider.png"
+                  alt=""
+                  class="mx-auto duration-200 w-full hover:scale-105"
+                />
+              </div>
+
+              <!-- Content -->
+              <div class="flex flex-col space-y-6">
+                <!-- Label & Title Container -->
+                <div
+                  class="flex flex-col mb-4 space-y-3 text-center md:text-left"
+                >
+                  <div>
+                    <div
+                      class="inline-block px-3 py-1 text-sm text-white bg-black rounded-full"
+                    >
+                      New Arrival
+                    </div>
+                  </div>
+
+                  <!-- Title -->
+                  <div class="max-w-sm text-2xl font-medium">
+                    Razer Kraken Kitty Edt Gaming Headset Quartz
+                  </div>
+                  <!-- Price Container -->
+                  <div
+                    class="flex flex-col mb-4 space-y-3 text-center md:text-left"
+                  >
+                    <p class="line-through">$799</p>
+                    <p class="text-5xl font-bold">$599</p>
+                    <p class="text-sm font-light text-gray-400">
+                      This offer is valid until April 3rd or as long as stock
+                      lasts!
+                    </p>
+                  </div>
+
+                  <!-- Button Group -->
+                  <div class="group">
+                    <button
+                      class="w-full transition-all duration-150 bg-black-700 text-white border-b-8 border-b-black-700 rounded-lg group-hover:border-t-8 group-hover:border-b-0 group-hover:bg-black group-hover:text-white group-hover:border-t-black-700 group-hover:shadow-lg"
+                    >
+                      <div
+                        class="px-8 py-4 duration-150 bg-[#FEEA00] text-black rounded-lg group-hover:bg-black group-hover:text-white"
+                      >
+                        Order Now
+                      </div>
+                    </button>
+                  </div>
+
+                  <!-- Stock -->
+                  <div class="flex items-center space-x-3 group">
+                    <div
+                      class="w-3 h-3 bg-green-400 rounded-full group-hover:animate-ping"
+                    ></div>
+                    <div class="text-sm">50+ pcs. in stock</div>
+                  </div>
+
+                  <!-- Bottom Buttons Container -->
+                  <div
+                    class="flex flex-col space-y-4 md:space-y-0 md:space-x-4 md:flex-row"
+                  >
+                    <button
+                      class="flex items-center justify-center py-3 px-5 space-x-3 border-2 border-gray-300 rounded-lg shadow-sm hover:bg-opacity-30 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-150"
+                    >
+                      <img src="images/weight.png" alt="" class="w-8" />
+                      <span>Make a call</span>
+                    </button>
+
+                    <button
+                      class="flex items-center justify-center py-3 px-5 space-x-3 border-2 border-gray-300 rounded-lg shadow-sm hover:bg-opacity-30 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-150"
+                    >
+                      <img src="images/heart.png" alt="" class="w-8" />
+                      <span>Send Message</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section>
+      <div class="mt-4 p-4">
+        <div
+          class="flex flex-col space-y-6 md:mx-8 lg:m-0 lg:items-center lg:mx-20"
+        >
+          <h1
+            class="uppercase text-[#004d6e] text-xl text-center font-bold tracking-widest"
+          >
+            Why Choose Us
+          </h1>
+
+          <p class="text-2xl font-bold lg:text-4xl lg:text-center">
+            We Care About you.
+          </p>
+          <p
+            class="text-lg text-[#737879] max-w-sm md:pr-0 md:text-xl md:max-w-lg lg:max-w-2xl lg:text-center"
+          >
+            Conquer any terrain with our lightweight, weather-resistant trekking
+            shoes featuring all-terrain grip, superior ankle support, and
+            eco-friendly materials for ultimate comfort and durability.
+          </p>
+        </div>
+
+        <div class="mt-8">
+          <div
+            class="flex items-center justify-center w-full h-full py-24 sm:py-8 px-4"
+          >
+            <div class="w-full relative flex items-center justify-center">
+              <button
+                aria-label="slide backward"
+                class="absolute z-30 left-0 ml-10 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer"
+                id="prev"
+              >
+                <svg
+                  class="dark:text-gray-900"
+                  width="8"
+                  height="14"
+                  viewBox="0 0 8 14"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M7 1L1 7L7 13"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+              <div
+                class="w-full h-full mx-auto overflow-x-hidden overflow-y-hidden"
+              >
+                <div
+                  id="slider"
+                  class="h-full flex lg:gap-8 md:gap-6 gap-14 items-center justify-start transition ease-out duration-700"
+                >
+                  <div class="flex flex-shrink-0 relative w-full sm:w-auto">
+                    <img
+                      src="https://i.ibb.co/fDngH9G/carosel-1.png"
+                      alt="black chair and white table"
+                      class="object-cover object-center w-full"
+                    />
+                    <div
+                      class="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6"
+                    >
+                      <h2
+                        class="lg:text-xl leading-4 text-base lg:leading-5 text-white dark:text-gray-900"
+                      >
+                        All-Terrain Grip
+                      </h2>
+                      <div class="flex h-full items-end pb-6">
+                        <h3
+                          class="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white dark:text-gray-900"
+                        >
+                          Strong grip for any surface.
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-shrink-0 relative w-full sm:w-auto">
+                    <img
+                      src="https://i.ibb.co/DWrGxX6/carosel-2.png"
+                      alt="sitting area"
+                      class="object-cover object-center w-full"
+                    />
+                    <div
+                      class="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6"
+                    >
+                      <h2
+                        class="lg:text-xl leading-4 text-base lg:leading-5 text-white dark:text-gray-900"
+                      >
+                        Weather-Resistant
+                      </h2>
+                      <div class="flex h-full items-end pb-6">
+                        <h3
+                          class="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white dark:text-gray-900"
+                        >
+                          Waterproof and breathable.
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-shrink-0 relative w-full sm:w-auto">
+                    <img
+                      src="https://i.ibb.co/tCfVky2/carosel-3.png"
+                      alt="sitting area"
+                      class="object-cover object-center w-full"
+                    />
+                    <div
+                      class="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6"
+                    >
+                      <h2
+                        class="lg:text-xl leading-4 text-base lg:leading-5 text-white dark:text-gray-900"
+                      >
+                        Lightweight
+                      </h2>
+                      <div class="flex h-full items-end pb-6">
+                        <h3
+                          class="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white dark:text-gray-900"
+                        >
+                          Light design for less fatigue.
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-shrink-0 relative w-full sm:w-auto">
+                    <img
+                      src="https://i.ibb.co/rFsGfr5/carosel-4.png"
+                      alt="sitting area"
+                      class="object-cover object-center w-full"
+                    />
+                    <div
+                      class="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6"
+                    >
+                      <h2
+                        class="lg:text-xl leading-4 text-base lg:leading-5 text-white dark:text-gray-900"
+                      >
+                        Ankle Support
+                      </h2>
+                      <div class="flex h-full items-end pb-6">
+                        <h3
+                          class="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white dark:text-gray-900"
+                        >
+                          Extra ankle support for stability.
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-shrink-0 relative w-full sm:w-auto">
+                    <img
+                      src="https://i.ibb.co/fDngH9G/carosel-1.png"
+                      alt="black chair and white table"
+                      class="object-cover object-center w-full"
+                    />
+                    <div
+                      class="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6"
+                    >
+                      <h2
+                        class="lg:text-xl leading-4 text-base lg:leading-5 text-white dark:text-gray-900"
+                      >
+                        Custom Fit
+                      </h2>
+                      <div class="flex h-full items-end pb-6">
+                        <h3
+                          class="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white dark:text-gray-900"
+                        >
+                          Adjustable laces and comfy insoles.
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-shrink-0 relative w-full sm:w-auto">
+                    <img
+                      src="https://i.ibb.co/DWrGxX6/carosel-2.png"
+                      alt="sitting area"
+                      class="object-cover object-center w-full"
+                    />
+                    <div
+                      class="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6"
+                    >
+                      <h2
+                        class="lg:text-xl leading-4 text-base lg:leading-5 text-white dark:text-gray-900"
+                      >
+                        Eco-Friendly
+                      </h2>
+                      <div class="flex h-full items-end pb-6">
+                        <h3
+                          class="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white dark:text-gray-900"
+                        >
+                          Made from sustainable materials.
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-shrink-0 relative w-full sm:w-auto">
+                    <img
+                      src="https://i.ibb.co/tCfVky2/carosel-3.png"
+                      alt="sitting area"
+                      class="object-cover object-center w-full"
+                    />
+                    <div
+                      class="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6"
+                    >
+                      <h2
+                        class="lg:text-xl leading-4 text-base lg:leading-5 text-white dark:text-gray-900"
+                      >
+                        Anti-Fatigue
+                      </h2>
+                      <div class="flex h-full items-end pb-6">
+                        <h3
+                          class="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white dark:text-gray-900"
+                        >
+                          Cushioned for long-lasting comfort
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-shrink-0 relative w-full sm:w-auto">
+                    <img
+                      src="https://i.ibb.co/rFsGfr5/carosel-4.png"
+                      alt="sitting area"
+                      class="object-cover object-center w-full"
+                    />
+                    <div
+                      class="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6"
+                    >
+                      <h2
+                        class="lg:text-xl leading-4 text-base lg:leading-5 text-white dark:text-gray-900"
+                      >
+                        Toe Protection
+                      </h2>
+                      <div class="flex h-full items-end pb-6">
+                        <h3
+                          class="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white dark:text-gray-900"
+                        >
+                          Reinforced toes for safety.
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-shrink-0 relative w-full sm:w-auto">
+                    <img
+                      src="https://i.ibb.co/fDngH9G/carosel-1.png"
+                      alt="black chair and white table"
+                      class="object-cover object-center w-full"
+                    />
+                    <div
+                      class="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6"
+                    >
+                      <h2
+                        class="lg:text-xl leading-4 text-base lg:leading-5 text-white dark:text-gray-900"
+                      >
+                        Multi-Season Use
+                      </h2>
+                      <div class="flex h-full items-end pb-6">
+                        <h3
+                          class="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white dark:text-gray-900"
+                        >
+                          Perfect for all-year hiking
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex flex-shrink-0 relative w-full sm:w-auto">
+                    <img
+                      src="https://i.ibb.co/DWrGxX6/carosel-2.png"
+                      alt="sitting area"
+                      class="object-cover object-center w-full"
+                    />
+                    <div
+                      class="bg-gray-800 bg-opacity-30 absolute w-full h-full p-6"
+                    >
+                      <h2
+                        class="lg:text-xl leading-4 text-base lg:leading-5 text-white dark:text-gray-900"
+                      >
+                        Stylish Design
+                      </h2>
+                      <div class="flex h-full items-end pb-6">
+                        <h3
+                          class="text-xl lg:text-2xl font-semibold leading-5 lg:leading-6 text-white dark:text-gray-900"
+                        >
+                          Performance meets modern style
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button
+                aria-label="slide forward"
+                class="absolute z-30 right-0 mr-10 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400"
+                id="next"
+              >
+                <svg
+                  class="dark:text-gray-900"
+                  width="8"
+                  height="14"
+                  viewBox="0 0 8 14"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1 1L7 7L1 13"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <p
+          class="mt-4 mb-6 text-[#737879] max-w-xs pl-4 text-lg md:max-w-none md:text-2xl md:my-20 md:text-center font-semibold"
+        >
+          Don't hesitate, contact us for better future life.
+          <span class="font-bold text-[#FEEA00]">Get a Free Quote</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- Team Member -->
+    <section>
+      <div class="mt-8">
+        <div class="flex flex-col pl-4 items-center space-y-8">
+          <div class="flex flex-col space-y-4">
+            <h1
+              class="uppercase text-[#004d6e] text-xl text-center font-bold tracking-widest"
+            >
+              Team Members
+            </h1>
+
+            <p
+              class="text-xl font-bold text-[#2b3132] md:text-4xl md:text-center"
+            >
+              Meet our People.
+            </p>
+          </div>
+
+          <div
+            class="flex flex-col space-y-6 items-center lg:space-y-0 lg:flex-row lg:space-x-2"
+          >
+            <div class="flex flex-col items-center space-y-6">
+              <img src="./img/user-4.jpg" class="w-1/2" alt="" />
+              <div class="flex flex-col space-y-4">
+                <p class="text-[#2b3132] text-2xl font-semibold">
+                  Jessica Brown
+                </p>
+                <p
+                  class="uppercase text-center text-[#737879] font-bold tracking-widest"
+                >
+                  Manager
+                </p>
+                <div class="flex space-x-2">
+                  <div
+                    class="w-12 h-12 bg-gray-200 flex justify-center items-center"
+                  >
+                    <img src="./img/fb.png" class="w-5 h-5" alt="" />
+                  </div>
+                  <div
+                    class="w-12 h-12 bg-gray-200 flex justify-center items-center"
+                  >
+                    <img src="./img/twitter (2).png" class="w-5 h-5" alt="" />
+                  </div>
+                  <div
+                    class="w-12 h-12 bg-gray-200 flex justify-center items-center"
+                  >
+                    <img src="./img/linkedin (1).png" class="w-5 h-5" alt="" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex flex-col items-center space-y-6">
+              <img src="./img/user-6.jpg" class="w-1/2" alt="" />
+              <div class="flex flex-col space-y-4">
+                <p class="text-[#2b3132] text-2xl font-semibold">
+                  Cassie Johnson
+                </p>
+                <p
+                  class="uppercase text-center text-[#737879] font-bold tracking-widest"
+                >
+                  Chief
+                </p>
+                <div class="flex space-x-2">
+                  <div
+                    class="w-12 h-12 bg-gray-200 flex justify-center items-center"
+                  >
+                    <img src="./img/fb.png" class="w-5 h-5" alt="" />
+                  </div>
+                  <div
+                    class="w-12 h-12 bg-gray-200 flex justify-center items-center"
+                  >
+                    <img src="./img/twitter (2).png" class="w-5 h-5" alt="" />
+                  </div>
+                  <div
+                    class="w-12 h-12 bg-gray-200 flex justify-center items-center"
+                  >
+                    <img src="./img/linkedin (1).png" class="w-5 h-5" alt="" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex flex-col items-center space-y-6">
+              <img src="./img/user-5.jpg" class="w-1/2" alt="" />
+              <div class="flex flex-col space-y-4">
+                <p class="text-[#2b3132] text-2xl font-semibold">
+                  David Goggins
+                </p>
+                <p
+                  class="uppercase text-[#737879] text-center font-bold tracking-widest"
+                >
+                  Director
+                </p>
+                <div class="flex space-x-2">
+                  <div
+                    class="w-12 h-12 bg-gray-200 flex justify-center items-center"
+                  >
+                    <img src="./img/fb.png" class="w-5 h-5" alt="" />
+                  </div>
+                  <div
+                    class="w-12 h-12 bg-gray-200 flex justify-center items-center"
+                  >
+                    <img src="./img/twitter (2).png" class="w-5 h-5" alt="" />
+                  </div>
+                  <div
+                    class="w-12 h-12 bg-gray-200 flex justify-center items-center"
+                  >
+                    <img src="./img/linkedin (1).png" class="w-5 h-5" alt="" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog and Article -->
+    <section>
+      <div class="mt-20 flex justify-center">
+        <div class="flex p-4 flex-col space-y-6">
+          <h4
+            1
+            class="uppercase text-[#004d6e] text-xl text-center font-bold tracking-widest"
+          >
+            Blog Posts
+          </h4>
+          <p class="text-[#2b3132] text-xl font-bold md:text-4xl">
+            News & Articles
+          </p>
+        </div>
+      </div>
+      <div class="p-4 md:p-8">
+        <div
+          class="grid grid-cols-1 gap-4 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4"
+        >
+          <div
+            class="flex flex-col space-y-3 bg-white p-4 rounded-lg shadow-md"
+          >
+            <div>
+              <img
+                src="./img/articles1.jpg"
+                class="w-full h-auto rounded-md"
+                alt=""
+              />
+            </div>
+            <p
+              class="text-base font-bold text-[#2b3132] duration-200 hover:text-[#FEEA00] transition ease-in-out md:text-xl lg:text-2xl"
+            >
+              Why personal insurance is a good idea this winter
+            </p>
+            <p class="text-[#737879] text-l">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
+            <p class="flex space-x-3 items-center">
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 1024 1024"
+                height="1em"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                ></path>
+                <path
+                  d="M686.7 638.6L544.1 535.5V288c0-4.4-3.6-8-8-8H488c-4.4 0-8 3.6-8 8v275.4c0 2.6 1.2 5 3.3 6.5l165.4 120.6c3.6 2.6 8.6 1.8 11.2-1.7l28.6-39c2.6-3.7 1.8-8.7-1.8-11.2z"
+                ></path>
+              </svg>
+              <span>11 Feb, 2024</span>
+            </p>
+            <button
+              class="bg-gray-800 p-2 outline-none text-[#FEEA00] flex items-center justify-center rounded-lg w-32 mt-2"
+            >
+              Read more
+            </button>
+          </div>
+          <div
+            class="flex flex-col space-y-3 bg-white p-4 rounded-lg shadow-md"
+          >
+            <div>
+              <img
+                src="./img/articles1.jpg"
+                class="w-full h-auto rounded-md"
+                alt=""
+              />
+            </div>
+            <p
+              class="text-base font-bold text-[#2b3132] duration-200 hover:text-[#FEEA00] transition ease-in-out md:text-xl lg:text-2xl"
+            >
+              Why personal insurance is a good idea this winter
+            </p>
+            <p class="text-[#737879] text-l">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
+            <p class="flex space-x-3 items-center">
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 1024 1024"
+                height="1em"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                ></path>
+                <path
+                  d="M686.7 638.6L544.1 535.5V288c0-4.4-3.6-8-8-8H488c-4.4 0-8 3.6-8 8v275.4c0 2.6 1.2 5 3.3 6.5l165.4 120.6c3.6 2.6 8.6 1.8 11.2-1.7l28.6-39c2.6-3.7 1.8-8.7-1.8-11.2z"
+                ></path>
+              </svg>
+              <span>11 Feb, 2024</span>
+            </p>
+            <button
+              class="bg-gray-800 p-2 outline-none text-[#FEEA00] flex items-center justify-center rounded-lg w-32 mt-2"
+            >
+              Read more
+            </button>
+          </div>
+          <div
+            class="flex flex-col space-y-3 bg-white p-4 rounded-lg shadow-md"
+          >
+            <div>
+              <img
+                src="./img/articles1.jpg"
+                class="w-full h-auto rounded-md"
+                alt=""
+              />
+            </div>
+            <p
+              class="text-base font-bold text-[#2b3132] duration-200 hover:text-[#FEEA00] transition ease-in-out md:text-xl lg:text-2xl"
+            >
+              Why personal insurance is a good idea this winter
+            </p>
+            <p class="text-[#737879] text-l">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
+            <p class="flex space-x-3 items-center">
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 1024 1024"
+                height="1em"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                ></path>
+                <path
+                  d="M686.7 638.6L544.1 535.5V288c0-4.4-3.6-8-8-8H488c-4.4 0-8 3.6-8 8v275.4c0 2.6 1.2 5 3.3 6.5l165.4 120.6c3.6 2.6 8.6 1.8 11.2-1.7l28.6-39c2.6-3.7 1.8-8.7-1.8-11.2z"
+                ></path>
+              </svg>
+              <span>11 Feb, 2024</span>
+            </p>
+            <button
+              class="bg-gray-800 p-2 outline-none text-[#FEEA00] flex items-center justify-center rounded-lg w-32 mt-2"
+            >
+              Read more
+            </button>
+          </div>
+          <div
+            class="flex flex-col space-y-3 bg-white p-4 rounded-lg shadow-md"
+          >
+            <div>
+              <img
+                src="./img/articles1.jpg"
+                class="w-full h-auto rounded-md"
+                alt=""
+              />
+            </div>
+            <p
+              class="text-base font-bold text-[#2b3132] duration-200 hover:text-[#FEEA00] transition ease-in-out md:text-xl lg:text-2xl"
+            >
+              Why personal insurance is a good idea this winter
+            </p>
+            <p class="text-[#737879] text-l">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </p>
+            <p class="flex space-x-3 items-center">
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 1024 1024"
+                height="1em"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                ></path>
+                <path
+                  d="M686.7 638.6L544.1 535.5V288c0-4.4-3.6-8-8-8H488c-4.4 0-8 3.6-8 8v275.4c0 2.6 1.2 5 3.3 6.5l165.4 120.6c3.6 2.6 8.6 1.8 11.2-1.7l28.6-39c2.6-3.7 1.8-8.7-1.8-11.2z"
+                ></path>
+              </svg>
+              <span>11 Feb, 2024</span>
+            </p>
+            <button
+              class="bg-gray-800 p-2 outline-none text-[#FEEA00] flex items-center justify-center rounded-lg w-32 mt-2"
+            >
+              Read more
+            </button>
+          </div>
+
+          <!-- Repeat similar blocks for other articles -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="bg-[#FEEA00] mt-20">
+      <div class="p-4 md:p-8 py-16 flex justify-center items-center">
+        <div
+          class="flex flex-col space-y-6 lg:space-y-0 lg:flex-row lg:space-x-16 lg:items-center"
+        >
+          <div class="flex flex-col space-y-4">
+            <p
+              class="text-[#2b3132] text-lg font-semibold uppercase md:text-xl"
+            >
+              Make a call or fill form
+            </p>
+            <p class="text-black text-sm md:text-4xl font-bold">
+              Contact our Agent to get a Quote
+            </p>
+          </div>
+
+          <button
+            class="whitespace-nowrap font-semibold bg-white py-3 px-5 w-56"
+          >
+            Make an Appointment
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#353b3c]">
+      <div class="flex items-center">
+        <div
+          class="w-full flex flex-col space-y-6 lg:items-center md:space-y-0 md:flex-row lg:justify-between py-6 px-4"
+        >
+          <div class="ml-16">
+            <img
+              src="./img/logorancedar.png"
+              alt="Site Logo"
+              class="ml-12 w-12 h-12"
+            />
+          </div>
+
+          <div class="flex space-x-4">
+            <div
+              class="flex justify-center items-center w-10 h-10 bg-[#1a1e1f] duration-200 hover:cursor-pointer hover:bg-[#FEEA00] transition ease-in-out"
+            >
+              <img src="./img/facebook.png" class="w-8 h-8" alt="" />
+            </div>
+            <div
+              class="flex justify-center items-center w-10 h-10 bg-[#1a1e1f] duration-200 hover:cursor-pointer hover:bg-[#FEEA00] transition ease-in-out"
+            >
+              <img src="./img/twitter.png" class="w-8 h-8" alt="" />
+            </div>
+            <div
+              class="flex justify-center items-center w-10 h-10 bg-[#1a1e1f] duration-200 hover:cursor-pointer hover:bg-[#FEEA00] transition ease-in-out"
+            >
+              <img src="./img/linkedin.png" class="w-8 h-8" alt="" />
+            </div>
+            <div
+              class="flex justify-center items-center w-10 h-10 bg-[#1a1e1f] duration-200 hover:cursor-pointer hover:bg-[#FEEA00] transition ease-in-out"
+            >
+              <img src="./img/instagram.png" class="w-8 h-8" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr />
+
+      <div class="flex items-center mt-8 p-6">
+        <div
+          class="flex flex-col space-y-10 justify-around lg:space-y-0 lg:flex-row lg:space-x-16"
+        >
+          <div
+            class="flex flex-col space-y-6 md:space-y-0 md:flex-row md:space-x-16"
+          >
+            <div class="flex flex-col space-y-6">
+              <p class="text-white max-w-xs pr-24 lg:pr-0">
+                Cedar-Ran Company is one of the leading public sector non life
+                insurance companies of India, Headquartered in Kolkata, NIC’s
+                foreign operation is carried out through its branch office in
+                Nepal.
+              </p>
+              <!-- <div class="flex">
+                <div class="p-3 md:py-3 md:px-5 bg-white">
+                  <input
+                    type="email"
+                    placeholder="Email address"
+                    class="outline-none border-none placeholder:text-[#4d4d4d] placeholder:text-lg"
+                  />
+                </div>
+                <div class="bg-[#FEEA00] p-4 flex justify-center items-center">
+                  <img src="./img/arrow-right.png" class="w-8 h-8" alt="" />
+                </div>
+              </div> -->
+            </div>
+
+            <div class="flex flex-col space-y-6">
+              <p class="uppercase text-white text-lg font-bold">Explore</p>
+              <div class="flex flex-col space-y-6">
+                <a
+                  href="#"
+                  class="text-white font-bold duration-200 hover:text-[#FEEA00] transition ease-in-out"
+                  >About</a
+                >
+                <a
+                  href="#"
+                  class="text-white font-bold duration-200 hover:text-[#FEEA00] transition ease-in-out"
+                  >Our Team</a
+                >
+                <a
+                  href="#"
+                  class="text-white font-bold duration-200 hover:text-[#FEEA00] transition ease-in-out"
+                  >Locations</a
+                >
+                <a
+                  href="#"
+                  class="text-white font-bold duration-200 hover:text-[#FEEA00] transition ease-in-out"
+                  >Gallery</a
+                >
+                <a
+                  href="#"
+                  class="text-white font-bold duration-200 hover:text-[#FEEA00] transition ease-in-out"
+                  >News & Blog</a
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex flex-col space-y-6 md:space-y-0 md:flex-row md:space-x-64"
+          >
+            <div class="flex flex-col space-y-8">
+              <p class="uppercase text-white font-bold text-lg">Products</p>
+              <div class="flex flex-col space-y-6">
+                <a
+                  href="#"
+                  class="text-white capitalize text-lg duration-200 hover:text-[#FEEA00] transition ease-in-out"
+                  >Property Insurance</a
+                >
+                <a
+                  href="#"
+                  class="text-white capitalize text-lg duration-200 hover:text-[#FEEA00] transition ease-in-out"
+                  >Auto Insurance</a
+                >
+                <a
+                  href="#"
+                  class="text-white capitalize text-lg duration-200 hover:text-[#FEEA00] transition ease-in-out"
+                  >Health Insurance</a
+                >
+                <a
+                  href="#"
+                  class="text-white capitalize text-lg duration-200 hover:text-[#FEEA00] transition ease-in-out"
+                  >Business Insurance</a
+                >
+              </div>
+            </div>
+
+            <div class="flex flex-col space-y-8">
+              <div class="flex flex-col space-y-6">
+                <p class="uppercase font-bold text-white">You've question</p>
+                <div class="flex flex-col space-y-4">
+                  <a href="#" class="text-[#FEEA00]">Get a Quote</a>
+                  <p class="text-white font-semibold">666 888 000</p>
+                </div>
+                <div class="flex flex-col space-y-4">
+                  <a href="#" class="text-[#FEEA00]">Send Email</a>
+                  <p class="text-white font-semibold">info@cedar.com</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      window.onload = function () {
+        const preloader = document.getElementById("preloader");
+        const content = document.getElementById("content");
+
+        preloader.style.display = "none"; // Hide preloader
+        content.classList.remove("hidden"); // Show content
+      };
+
+      // Get the button
+      let goToTopBtn = document.getElementById("goToTopBtn");
+
+      // When the user scrolls down 100px from the top of the document, show the button
+      window.onscroll = function () {
+        scrollFunction();
+      };
+
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 100 ||
+          document.documentElement.scrollTop > 100
+        ) {
+          goToTopBtn.classList.remove("hidden");
+        } else {
+          goToTopBtn.classList.add("hidden");
+        }
+      }
+
+      // When the user clicks on the button, scroll to the top of the document
+      goToTopBtn.onclick = function () {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      };
+      // Burger menus
+      document.addEventListener("DOMContentLoaded", function () {
+        // open
+        const burger = document.querySelectorAll(".navbar-burger");
+        const menu = document.querySelectorAll(".navbar-menu");
+
+        if (burger.length && menu.length) {
+          for (var i = 0; i < burger.length; i++) {
+            burger[i].addEventListener("click", function () {
+              for (var j = 0; j < menu.length; j++) {
+                menu[j].classList.toggle("hidden");
+              }
+            });
+          }
+        }
+
+        // close
+        const close = document.querySelectorAll(".navbar-close");
+        const backdrop = document.querySelectorAll(".navbar-backdrop");
+
+        if (close.length) {
+          for (var i = 0; i < close.length; i++) {
+            close[i].addEventListener("click", function () {
+              for (var j = 0; j < menu.length; j++) {
+                menu[j].classList.toggle("hidden");
+              }
+            });
+          }
+        }
+
+        if (backdrop.length) {
+          for (var i = 0; i < backdrop.length; i++) {
+            backdrop[i].addEventListener("click", function () {
+              for (var j = 0; j < menu.length; j++) {
+                menu[j].classList.toggle("hidden");
+              }
+            });
+          }
+        }
+      });
+
+      let defaultTransform = 0;
+      function goNext() {
+        defaultTransform = defaultTransform - 398;
+        var slider = document.getElementById("slider");
+        if (Math.abs(defaultTransform) >= slider.scrollWidth / 1.7)
+          defaultTransform = 0;
+        slider.style.transform = "translateX(" + defaultTransform + "px)";
+      }
+      next.addEventListener("click", goNext);
+      function goPrev() {
+        var slider = document.getElementById("slider");
+        if (Math.abs(defaultTransform) === 0) defaultTransform = 0;
+        else defaultTransform = defaultTransform + 398;
+        slider.style.transform = "translateX(" + defaultTransform + "px)";
+      }
+      prev.addEventListener("click", goPrev);
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const navbar = document.querySelector("nav");
+        let lastScrollTop = 0;
+        let isScrollingUp = false;
+        let isNavbarVisible = true;
+        let throttleTimeout = null;
+
+        window.addEventListener("scroll", function () {
+          const scrollTop =
+            window.pageYOffset || document.documentElement.scrollTop;
+
+          // Throttle the scroll event to avoid rapid toggling
+          if (throttleTimeout) {
+            clearTimeout(throttleTimeout);
+          }
+
+          throttleTimeout = setTimeout(() => {
+            if (scrollTop > lastScrollTop && isNavbarVisible) {
+              // Scrolling down and navbar is visible -> hide the navbar
+              navbar.style.top = `-${navbar.offsetHeight}px`;
+              isNavbarVisible = false;
+            } else if (scrollTop < lastScrollTop && !isNavbarVisible) {
+              // Scrolling up and navbar is hidden -> show the navbar
+              navbar.style.top = "0";
+              isNavbarVisible = true;
+            }
+
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Avoid negative values
+          }, 100); // Adjust the delay as needed (higher values reduce the chance of flickering)
+        });
+      });
+    </script>
+    <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
+  </body>
+</html>
